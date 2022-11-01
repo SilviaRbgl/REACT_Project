@@ -12,7 +12,10 @@ function ButtonAppBar() {
   return (
     <div>
       <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static">
+        <AppBar
+          position="static"
+          elevation={0}
+        >
           <Toolbar>
             <LiveTvRoundedIcon />
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
@@ -21,6 +24,7 @@ function ButtonAppBar() {
             <Button
               variant="contained"
               color="secondary"
+              onClick={() => console.log("you clicked login button")}
             >Login</Button>
           </Toolbar>
         </AppBar>

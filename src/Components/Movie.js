@@ -27,7 +27,7 @@ function Movie({ movie }) {
             size="small"
             color="secondary"
             endIcon={<KeyboardArrowRightRoundedIcon />}
-            onClick={() => console.log("you clicked button")}
+            onClick={() => console.log("you clicked more button")}
           >More</Button>
         </CardActions>
       </Card>
