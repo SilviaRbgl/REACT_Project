@@ -1,8 +1,8 @@
 import Home from "./view/Home";
 // import { data } from "./API-data/response";
 import { createTheme, ThemeProvider } from "@mui/material/styles"
-import { fontWeight } from "@mui/system";
 
+// Style properties of MUI in my own style
 const theme = createTheme({
   palette: {
     primary: {

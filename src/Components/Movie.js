@@ -25,7 +25,7 @@ function Movie({ movie }) {
           <Button
             variant="contained"
             size="small"
-            color="info"
+            color="secondary"
             endIcon={<KeyboardArrowRightRoundedIcon />}
             onClick={() => console.log("you clicked button")}
           >More</Button>

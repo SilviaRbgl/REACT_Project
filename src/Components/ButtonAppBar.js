@@ -20,7 +20,7 @@ function ButtonAppBar() {
             </Typography>
             <Button
               variant="contained"
-              color="info"
+              color="secondary"
             >Login</Button>
           </Toolbar>
         </AppBar>
