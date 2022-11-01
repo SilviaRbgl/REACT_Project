@@ -4,6 +4,7 @@ import Movie from './Movie'
 import { Container } from "@mui/material"
 import { Grid } from "@mui/material"
 
+
 function MainSearch() {
 
   const [movies, setMovies] = useState([])

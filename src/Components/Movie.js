@@ -5,11 +5,12 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import KeyboardArrowRightRoundedIcon from '@mui/icons-material/KeyboardArrowRightRounded';
 
 function Movie({ movie }) {
   return (
-    <div>
-      <Card className="Movie">
+    <div >
+      <Card >
         <CardMedia
           component="img"
           src={movie.image}
@@ -24,7 +25,8 @@ function Movie({ movie }) {
           <Button
             variant="contained"
             size="small"
-            color="success"
+            color="info"
+            endIcon={<KeyboardArrowRightRoundedIcon />}
             onClick={() => console.log("you clicked button")}
           >More</Button>
         </CardActions>
