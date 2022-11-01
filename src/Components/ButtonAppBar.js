@@ -1,5 +1,6 @@
 import React from "react";
 // import * as React from 'react';
+import '../index.css';
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -27,7 +28,8 @@ function ButtonAppBar() {
               movies
             </Typography>
             <Button
-              color="inherit"
+              variant="contained"
+              color="success"
             >Login</Button>
           </Toolbar>
         </AppBar>
