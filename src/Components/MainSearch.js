@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { data } from "../API-data/response"
 import Movie from './Movie'
+import { Container } from "@mui/material"
+import { Grid } from "@mui/material"
 
 function MainSearch() {
 
@@ -29,12 +31,14 @@ useEffect(() => {
 
 
   return (
-    <div>
+    <Container>
+      <Grid container>
       {movies.map((movie) => {
+        <Grid item key={movie.id} xs={12} md={6} lg={4}/>
         return <Movie movie={movie} />
       })}
-      
-    </div>
+      </Grid>
+    </Container>
   )
 }
 
