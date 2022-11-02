@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { data } from "../API-data/response"
-import Movie from './Movie'
+import NavBar from "../Components/NavBar";
+import Movie from '../Components/Movie'
 import { Container } from "@mui/material"
 import { Grid } from "@mui/material"
 
 
-function MainSearch() {
+function Movies() {
 
   const [movies, setMovies] = useState([])
   const [error, setError] = useState(null)
@@ -32,15 +33,28 @@ useEffect(() => {
 
 
   return (
-    <Container>
-      <Grid container>
+    <div>
+      <NavBar />
+      <div className="ContainerCards">
       {movies.map((movie) => {
-        <Grid item key={movie.id} xs={12} md={6} lg={4}/>
         return <Movie movie={movie} />
       })}
-      </Grid>
-    </Container>
+      </div>
+
+
+
+
+
+    </div>
+    // <Container>
+    //   <Grid container>
+      // {movies.map((movie) => {
+      //   <Grid item key={movie.id} xs={12} md={6} lg={4}/>
+      //   return <Movie movie={movie} />
+      // })}
+    //   </Grid>
+    // </Container>
   )
 }
 
-export default MainSearch
+export default Movies

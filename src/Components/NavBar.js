@@ -6,13 +6,11 @@ function NavBar() {
     <div className="NavBar">
       <ul>
         <li>HOME</li>
+        {/* <img src="{./images/movie-icon.png}" alt=""> */}
         <button
           onClick={() => console.log("you clicked logIn button")}
         >LOG IN</button>
       </ul>
-
-
-
     </div>
   );
 }
