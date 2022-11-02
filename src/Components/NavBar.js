@@ -8,6 +8,7 @@ function NavBar() {
         <li>HOME</li>
         {/* <img src="{./images/movie-icon.png}" alt=""> */}
         <button
+          className="Button"
           onClick={() => console.log("you clicked logIn button")}
         >LOG IN</button>
       </ul>

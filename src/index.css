@@ -26,7 +26,7 @@ body {
 }
 
 /* BUTTON */
-button {
+.Button {
   font-family: Quicksand;
   background-color: #EC6F7F;
   border: none;
@@ -40,19 +40,40 @@ button {
 
 /* CARD */
 .ContainerCards {
+  /* margin: 20px; */
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto auto;
+  gap: 10px;
+  padding: 10px;
   max-width: 150px;
   max-height: 350px;
-}
-.Card {
-  max-width: 150px;
-  max-height: 350px;
-  margin: auto;
   text-align: center;
 }
 
-.Card img {
-  width: 100%
+.Card-Single {
+  margin: auto;
+  text-align: center;
+  background-color: #6b87582e;
+  border: 2.8px solid #EC6F7F;
+  border-radius: 15px;
+  padding: 5px;
 }
+
+.Card-Single img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+.Card-Single p {
+  margin: 0;
+  font-size: 16px;
+}
+
+.Card-Single button {
+  font-size: 12px;
+}
+
 
 /* .MuiContainer {
   display: flex;

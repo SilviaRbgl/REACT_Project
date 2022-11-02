@@ -3,17 +3,16 @@ import KeyboardArrowRightRoundedIcon from '@mui/icons-material/KeyboardArrowRigh
 
 function Movie({ movie }) {
   return (
-    <div >
-      <card className="Card">
+    
+      <card className="Card-Single">
         <img src={movie.image} alt="poster of a movie"/>
         <p>{movie.title}</p>
-        <button
+      <button
+          className="Button"
           onClick={() => console.log("you clicked more button")}>
         MORE
         </button>
       </card>
-      
-    </div>
   );
 }
 

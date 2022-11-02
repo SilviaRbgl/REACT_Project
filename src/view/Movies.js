@@ -2,8 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { data } from "../API-data/response"
 import NavBar from "../Components/NavBar";
 import Movie from '../Components/Movie'
-import { Container } from "@mui/material"
-import { Grid } from "@mui/material"
+import SearchBar from '../Components/SearchBar';
 
 
 function Movies() {
@@ -31,29 +30,17 @@ useEffect(() => {
   fetchMovies();
 }, [])
 
-
   return (
     <div>
       <NavBar />
-      <div className="ContainerCards">
+      <SearchBar />
+      <div className="ContainerCards" sx={{ flexGrow: 1 }}>
       {movies.map((movie) => {
         return <Movie movie={movie} />
       })}
       </div>
 
-
-
-
-
     </div>
-    // <Container>
-    //   <Grid container>
-      // {movies.map((movie) => {
-      //   <Grid item key={movie.id} xs={12} md={6} lg={4}/>
-      //   return <Movie movie={movie} />
-      // })}
-    //   </Grid>
-    // </Container>
   )
 }
 
