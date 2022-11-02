@@ -1,11 +1,11 @@
 import React from "react";
-import ButtonAppBar from "../Components/ButtonAppBar";
+import NavBar from "../Components/NavBar";
 import MainSearch from "../Components/MainSearch";
 
 function Home() {
   return (
     <div>
-      <ButtonAppBar />
+      <NavBar />
       <MainSearch />
     </div>
   );

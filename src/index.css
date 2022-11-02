@@ -4,6 +4,57 @@ body {
   margin: 0;
   background-color: #E5EEDE;
   width: 100%;
+  font-family: Quicksand;
+  color: #6B8758;
 }
 
+/* NAV BAR */
+.NavBar {
+  background-color: #6B8758;
+  color: #E5EEDE;
+}
 
+.NavBar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 20px;
+}
+.NavBar li {
+  display: inline;
+  
+}
+
+/* BUTTON */
+button {
+  font-family: Quicksand;
+  background-color: #EC6F7F;
+  border: none;
+  border-radius: 8px;
+  color: #E5EEDE;
+  padding: 5px 10px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+/* .MuiContainer {
+  display: flex;
+  flex-direction: column;
+}
+.MuiGrid {
+  background-color: red;
+  max-height: 200px;
+  max-width: 100px;
+  display: flex;
+  flex-direction: column;
+}
+.MuiPaper {
+  background-color: #E5EEDE;
+}
+.MuiCardMedia {
+  background-color: #E5EEDE;
+  /* border-radius: 50px; 
+  max-height: 100px;
+  max-width: 100px;
+  
+} */

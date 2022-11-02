@@ -10,14 +10,17 @@ import KeyboardArrowRightRoundedIcon from '@mui/icons-material/KeyboardArrowRigh
 function Movie({ movie }) {
   return (
     <div >
-      <Card >
+      <Card
+        className="MuiGrid"
+      >
         <CardMedia
+          className="MuiCardMedia"
           component="img"
           src={movie.image}
           alt="poster of a movie"
         />
         <CardContent>
-          <Typography variant="h6" component="div" align="center">
+          <Typography variant="body2" component="div" align="center">
             {movie.title}
           </Typography>
         </CardContent>
