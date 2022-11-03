@@ -1,11 +1,136 @@
+/* VARIABLES */
+:root{
+  --primary: #00C2FF;
+  --secondary: #FC6973;
+  --third: #00B271;
+  --fourth: #E5EEDE;
+}
+
+
+/* RESET */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	/* font: inherit; */
+	vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* BASE STYLES */
+body {
+  background: var(--fourth);
+  overflow-x: hidden;
+  font-family: Quicksand;
+  /*color: #6B8758; */
+}
+
+.Button {
+  background: var(--secondary);
+  border: none;
+  color: var(--fourth);
+  padding: 5px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  display: inline-block;
+  /* font-family: Quicksand; */ 
+  /* color: #E5EEDE;
+  text-decoration: none;
+  font-size: 16px; */
+}
+.Button:hover{
+  color: var(--fourth);
+  background: var(--primary);
+}
+
+input,textarea{
+  background: rgba(255, 255, 255, 0.05);
+  padding: 10px 16px;
+  border-radius: 20px;
+  border: 2px solid var(--third);
+  color: var(--third);
+}
+
+/* FONTS */
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 
-body {
-  margin: 0;
-  background-color: #E5EEDE;
-  font-family: Quicksand;
-  color: #6B8758;
+h1,h2,h3,h4 {
+  /* color: */
+  font-weight: normal;
 }
+/* p,a,li{
+  color: 
+} */
+
+h1,h2{
+  font-size: 1.6em;
+}
+h3,h4{
+  font-size: 1.4em;
+}
+p{
+  font-size: 1.1em;
+}
+
+
+/* MOBILE STYLES */
+
+/* SMALL TABLES STYLES */
+@media screen and (min-width: 620px) {
+
+}
+
+/*LARGE TABLETS & LAPTOPS STYLES */
+@media screen and (min-width: 960px) {
+  body{
+    font-size: 18px;
+  }
+}
+
+/*DESKTOP STYLES */
+@media screen and (min-width: 1200px) {
+  body{
+    font-size: 20px;
+  }
+}
+
+
 
 /* NAV BAR */
 .NavBar {
@@ -26,29 +151,18 @@ body {
 }
 
 /* BUTTON */
-.Button {
-  font-family: Quicksand;
-  background-color: #EC6F7F;
-  border: none;
-  border-radius: 8px;
-  color: #E5EEDE;
-  padding: 5px 10px;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-}
+
 
 /* CARD */
 .ContainerCards {
   /* margin: 20px; */
   display: grid;
-  grid-template-columns: auto auto auto;
-  grid-template-rows: auto auto auto;
+  grid-template-columns: repeat(2, 1fr);
   gap: 10px;
-  padding: 10px;
-  max-width: 150px;
-  max-height: 350px;
-  text-align: center;
+  /* padding: 10px; */
+  /* max-width: 150px; */
+  /* max-height: 350px; */
+  /* text-align: center; */
 }
 
 .Card-Single {
@@ -67,32 +181,5 @@ body {
 
 .Card-Single p {
   margin: 0;
-  font-size: 16px;
 }
 
-.Card-Single button {
-  font-size: 12px;
-}
-
-
-/* .MuiContainer {
-  display: flex;
-  flex-direction: column;
-}
-.MuiGrid {
-  background-color: red;
-  max-height: 200px;
-  max-width: 100px;
-  display: flex;
-  flex-direction: column;
-}
-.MuiPaper {
-  background-color: #E5EEDE;
-}
-.MuiCardMedia {
-  background-color: #E5EEDE;
-  /* border-radius: 50px; 
-  max-height: 100px;
-  max-width: 100px;
-  
-} */

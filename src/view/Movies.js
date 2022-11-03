@@ -28,9 +28,9 @@ function Movies() {
   return (
     <div>
       <SearchBar />
-      <div className="ContainerCards">
+      <div className="ContainerCards grid">
         {movies.map((movie) => {
-          return <Movie movie={movie} />;
+          return <Movie key={movie.id} movie={movie} />;
         })}
       </div>
     </div>

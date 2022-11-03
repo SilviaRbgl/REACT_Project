@@ -11,7 +11,7 @@ function Movie({ movie }) {
   }
 
   return (
-    <card className="Card-Single">
+    <div className="Card-Single">
       <img src={movie.image} alt="poster of a movie" />
       <p>{movie.title}</p>
       {/* <Link to={`${movie.title}`}>{movie.title}</Link> */}
@@ -21,7 +21,7 @@ function Movie({ movie }) {
       >
         MORE
       </button>
-    </card>
+    </div>
   );
 }
 

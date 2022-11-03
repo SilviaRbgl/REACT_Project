@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 function NavBar() {
   return (
-    <div className="NavBar">
+    <div className="NavBar Grid">
       <ul>
         <NavLink to="/">Home</NavLink>
         <NavLink to="/movies">Movies</NavLink>
