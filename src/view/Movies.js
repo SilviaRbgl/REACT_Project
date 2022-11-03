@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { data } from "../API-data/response"
-import NavBar from "../Components/NavBar";
 import Movie from '../Components/Movie'
 import SearchBar from '../Components/SearchBar';
 
@@ -32,7 +31,6 @@ useEffect(() => {
 
   return (
     <div>
-      <NavBar />
       <SearchBar />
       <div className="ContainerCards" sx={{ flexGrow: 1 }}>
       {movies.map((movie) => {
