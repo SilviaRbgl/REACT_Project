@@ -19,12 +19,7 @@ function Home() {
   };
 
   return (
-    <div>
-      <h1>hello1</h1>
-      <h2>hello2</h2>
-      <h3>hello3</h3>
-      <h4>hello3</h4>
-
+    <div className="Container">
       <p>Welcome to moviestowatch.com.</p>
       <p>I have to still build this page, so be patiente.</p>
       <p>If you want to search movies, click here:</p>

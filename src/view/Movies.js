@@ -26,14 +26,14 @@ function Movies() {
   }, []);
 
   return (
-    <div>
+    <>
       <SearchBar />
-      <div className="ContainerCards grid">
+      <div className="Container grid">
         {movies.map((movie) => {
           return <Movie key={movie.id} movie={movie} />;
         })}
       </div>
-    </div>
+    </>
   );
 }
 

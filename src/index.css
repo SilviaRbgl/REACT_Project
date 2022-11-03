@@ -1,7 +1,7 @@
 /* VARIABLES */
 :root{
   --primary: #00C2FF;
-  --secondary: #FC6973;
+  --secondary: #F09F60;
   --third: #00B271;
   --fourth: #E5EEDE;
 }
@@ -60,7 +60,6 @@ body {
   font-family: Quicksand;
   /*color: #6B8758; */
 }
-
 .Button {
   background: var(--secondary);
   border: none;
@@ -78,7 +77,6 @@ body {
   color: var(--fourth);
   background: var(--primary);
 }
-
 input,textarea{
   background: rgba(255, 255, 255, 0.05);
   padding: 10px 16px;
@@ -86,6 +84,23 @@ input,textarea{
   border: 2px solid var(--third);
   color: var(--third);
 }
+a{
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--fourth);
+}
+.Card-Single {
+  margin: 7px;
+  /* text-align: center; */
+  border: 5px solid var(--third);
+  border-radius: 20px;
+  /* padding: 10px; */
+}
+.Card-Single img {
+  width: 100%;
+  border-radius: 15px;
+}
+
 
 /* FONTS */
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
@@ -112,18 +127,26 @@ p{
 /* MOBILE STYLES */
 .grid{
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-}
-
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5 px;
+} 
 .NavBar {
   margin: 0;
+  padding: 20px;
   background: var(--third);
-  color: #E5EEDE;
-  justify-content: center; 
+  color: var(--fourth);
+  justify-content: center;
+  display: flex;
+  justify-content: space-around;
 }
 .NavBar ul{
+  /* list-style-type: none;
+  overflow: hidden; */
   grid-column: 1/4;
   grid-row: 1;
+}
+.Container {
+  margin: 15px;
 }
   
 
@@ -157,46 +180,16 @@ p{
   color: #E5EEDE;
 } */
 
-.NavBar ul {
+/* .NavBar ul {
   list-style-type: none;
   margin: 0;
-  padding: 20px;
-}
-.NavBar li {
+  
+} */
+/* .NavBar li {
   display: inline;
   
-}
-
-/* BUTTON */
+} */
 
 
-/* CARD */
-.ContainerCards {
-  /* margin: 20px; */
-  /* display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px; */
-  /* padding: 10px; */
-  /* max-width: 150px; */
-  /* max-height: 350px; */
-  /* text-align: center; */
-}
 
-.Card-Single {
-  margin: auto;
-  text-align: center;
-  background-color: #6b87582e;
-  border: 2.8px solid #EC6F7F;
-  border-radius: 15px;
-  padding: 5px;
-}
-
-.Card-Single img {
-  width: 100%;
-  border-radius: 15px;
-}
-
-.Card-Single p {
-  margin: 0;
-}
 

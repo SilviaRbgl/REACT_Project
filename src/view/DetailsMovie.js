@@ -6,7 +6,7 @@ function DetailsMovie() {
   const { title } = useParams();
 
   return (
-    <div>
+    <div className="Container">
       {/* <card className="Card-Single"> */}
         <h2>Movie: {title} </h2>
         {/* <img src="" alt="poster of a movie" /> */}
