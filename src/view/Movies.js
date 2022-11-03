@@ -28,7 +28,7 @@ function Movies() {
   return (
     <div>
       <SearchBar />
-      <div className="ContainerCards" sx={{ flexGrow: 1 }}>
+      <div className="ContainerCards">
         {movies.map((movie) => {
           return <Movie movie={movie} />;
         })}

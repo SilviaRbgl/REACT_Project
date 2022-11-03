@@ -1,15 +1,15 @@
 import React from "react";
 import '../index.css';
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function NavBar() {
   return (
     <div className="NavBar">
       <ul>
-        <Link to="/">Home</Link>
-        <Link to="/movies">Movies</Link>
-        <Link to="/login">Log in</Link>
-        <Link to="/register">Register</Link>
+        <NavLink to="/">Home</NavLink>
+        <NavLink to="/movies">Movies</NavLink>
+        <NavLink to="/login">Log in</NavLink>
+        <NavLink to="/register">Register</NavLink>
         {/* <img src="{./images/movie-icon.png}" alt=""> */}
         {/* <button
           className="Button"
