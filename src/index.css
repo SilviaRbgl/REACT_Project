@@ -110,6 +110,23 @@ p{
 
 
 /* MOBILE STYLES */
+.grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.NavBar {
+  margin: 0;
+  background: var(--third);
+  color: #E5EEDE;
+  justify-content: center; 
+}
+.NavBar ul{
+  grid-column: 1/4;
+  grid-row: 1;
+}
+  
+
 
 /* SMALL TABLES STYLES */
 @media screen and (min-width: 620px) {
@@ -133,12 +150,12 @@ p{
 
 
 /* NAV BAR */
-.NavBar {
+/* .NavBar {
   display: grid;
   justify-content: center;
   background-color: #6B8758;
   color: #E5EEDE;
-}
+} */
 
 .NavBar ul {
   list-style-type: none;
@@ -156,9 +173,9 @@ p{
 /* CARD */
 .ContainerCards {
   /* margin: 20px; */
-  display: grid;
+  /* display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
+  gap: 10px; */
   /* padding: 10px; */
   /* max-width: 150px; */
   /* max-height: 350px; */
