@@ -1,18 +1,21 @@
 import React from "react";
-import KeyboardArrowRightRoundedIcon from '@mui/icons-material/KeyboardArrowRightRounded';
+import { Link } from "react-router-dom";
+import KeyboardArrowRightRoundedIcon from "@mui/icons-material/KeyboardArrowRightRounded";
 
 function Movie({ movie }) {
   return (
-    
-      <card className="Card-Single">
-        <img src={movie.image} alt="poster of a movie"/>
-        <p>{movie.title}</p>
+    <card className="Card-Single">
+      <img src={movie.image} alt="poster of a movie" />
+      <p>{movie.title}</p>
+      <Link to={`${movie.title}`}>{movie.title}</Link>
       <button
-          className="Button"
-          onClick={() => console.log("you clicked more button")}>
+        className="Button"
+        onClick={() => 
+          console.log("you clicked more button")}
+      >
         MORE
-        </button>
-      </card>
+      </button>
+    </card>
   );
 }
 
