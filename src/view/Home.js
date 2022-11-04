@@ -21,20 +21,20 @@ function Home() {
 
   return (
     <div className="Container">
-      <h1>Welcome to moviestoreview.com.</h1>
+      <h1>Welcome to moviestoreview</h1>
       <img src={movieIcon} alt="logo"/>
-      <p>MoviesToReview is the world's largest site for movie recommendations.</p>
+      <p>moviestoreview is the world's largest site for movie recommendations.</p>
       <button className="Button" onClick={goSearch}>
         SEARCH MOVIES
       </button>
-      <p>If you want to log in, click here:</p>
+      {/* <p>If you want to log in, click here:</p>
       <button className="Button" onClick={goLogin}>
         LOG IN
       </button>
       <p>New here? You can register here:</p>
       <button className="Button" onClick={goRegister}>
         REGISTER
-      </button>
+      </button> */}
     </div>
   );
 }

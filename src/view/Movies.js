@@ -6,6 +6,7 @@ import SearchBar from "../Components/SearchBar";
 function Movies() {
   const [movies, setMovies] = useState([]);
   const [error, setError] = useState(null);
+  const [search, setSearch] = useState("");
 
   const fetchMovies = async () => {
     try {
@@ -25,7 +26,6 @@ function Movies() {
     fetchMovies();
   }, []);
 
-  const [search, setSearch] = useState("")
 
   const getInput = (input) => {
   console.log("get input>>", input);
@@ -34,11 +34,18 @@ function Movies() {
   console.log("search >>", search); 
   }
 
+  const filterMovies = () => {
+    const filteredMovies = movies.filter((movie) => {
+      return movie.title.toLowerCase().includes(search.toLowerCase())
+    })
+    return filteredMovies;
+  }
+
   return (
     <div className="Container">
       <SearchBar getInput={getInput} />
       <div className="grid">
-        {movies.map((movie) => {
+        {filterMovies().map((movie) => {
           return <Movie key={movie.id} movie={movie} search={search}/>;
         })}
       </div>

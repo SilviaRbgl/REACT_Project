@@ -7,12 +7,12 @@ function Movie({ movie }) {
   const clickMore = useNavigate();
   
   const goMore = () => {
-    clickMore(`${movie.title}`)
+    clickMore(`${movie.id}`)
   }
 
   return (
     <div className="Card-Single">
-      <img src={movie.image} alt="poster of a movie" />
+      <img src={movie.image} alt="poster of the movie" />
       <p>{movie.title}</p>
       {/* <Link to={`${movie.title}`}>{movie.title}</Link> */}
       <button
