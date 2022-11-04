@@ -4,7 +4,7 @@ import Movie from "../Components/Movie";
 import SearchBar from "../Components/SearchBar";
 
 function Movies() {
-  const [movies, setMovies] = useState([]);
+  const [movies, setMovies] = useState([]); 
   const [error, setError] = useState(null);
   const [search, setSearch] = useState("");
 

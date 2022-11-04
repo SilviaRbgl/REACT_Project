@@ -14,7 +14,6 @@ function NavBar() {
         <NavLink to="/movies">Movies</NavLink>{" "}
         {/* <NavLink to="/login">Log in</NavLink> */}
         {/* <NavLink to="/register">Register</NavLink> */}
-        {/* <img src="{./images/movie-icon.png}" alt=""> */}
         <button
           className="Button"
           onClick={() => console.log("you clicked logIn button")}
