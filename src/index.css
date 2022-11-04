@@ -145,8 +145,12 @@ p{
   grid-column: 1/4;
   grid-row: 1;
 }
+/* .NavBar img{
+  width: 10%;
+} */
 .Container {
   margin: 15px;
+  text-align: center;
 }
   
 

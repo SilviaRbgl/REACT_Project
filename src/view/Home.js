@@ -1,6 +1,7 @@
 import React from "react";
 import Movies from "./Movies";
 import { useNavigate } from "react-router-dom";
+import movieIcon from '../images/movieIcon.png';
 
 function Home() {
   const clickSearch = useNavigate();
@@ -20,9 +21,9 @@ function Home() {
 
   return (
     <div className="Container">
-      <p>Welcome to moviestowatch.com.</p>
-      <p>I have to still build this page, so be patiente.</p>
-      <p>If you want to search movies, click here:</p>
+      <h1>Welcome to moviestoreview.com.</h1>
+      <img src={movieIcon} alt="logo"/>
+      <p>MoviesToReview is the world's largest site for movie recommendations.</p>
       <button className="Button" onClick={goSearch}>
         SEARCH MOVIES
       </button>

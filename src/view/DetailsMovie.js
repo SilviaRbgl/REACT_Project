@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 
 function DetailsMovie() {
+    
   console.log(useParams());
   const { title } = useParams();
 
