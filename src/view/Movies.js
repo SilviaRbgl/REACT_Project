@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { data } from "../API-data/response";
 import Movie from "../Components/Movie";
-
+import SearchBar from "../Components/SearchBar";
 
 function Movies() {
   const [movies, setMovies] = useState([]);
@@ -25,16 +25,21 @@ function Movies() {
     fetchMovies();
   }, []);
 
+  const [search, setSearch] = useState("")
+
+  const getInput = (input) => {
+  console.log("get input>>", input);
+   
+  setSearch(input)
+  console.log("search >>", search); 
+  }
+
   return (
     <div className="Container">
-      <input
-        type="text"
-        placeholder='Search'
-        // onChange={}
-      />
+      <SearchBar getInput={getInput} />
       <div className="grid">
         {movies.map((movie) => {
-          return <Movie key={movie.id} movie={movie} />;
+          return <Movie key={movie.id} movie={movie} search={search}/>;
         })}
       </div>
     </div>
