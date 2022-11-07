@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { data2 } from "../API-data/response2";
 import Movies from "./Movies";
 
@@ -12,6 +12,11 @@ function DetailsMovie() {
   const [hover, setHover] = useState(0);
   const [actors, setActors] = useState([]);
   console.log(actors);
+
+  const clickLogin = useNavigate();
+  const goLogin = () => {
+    clickLogin("/login");
+  };
 
   const fetchSingleMovie = async () => {
     try {
@@ -45,21 +50,27 @@ function DetailsMovie() {
       <h3>{singleMovie.fullTitle}</h3>
       <p>Directed by: {singleMovie.directors}</p>
       
-      <p>Cast:
+      <p>Top cast:
         {/* {filterActors().map((actor) => {
           return actors={}
         })} */}
         </p>
 
       <div className="">
-        <p><img src={singleMovie.image} alt="poster of the movie"/>Plot: {singleMovie.plot}</p>
+        <p><img src={singleMovie.image} alt="poster of the movie"/>Plot summary: {singleMovie.plot}</p>
         
         
       </div>
       
-      <p>Users Rating: {singleMovie.imDbRating}</p>
+      <p>User rating: {singleMovie.imDbRating}</p>
+      <button
+          className="Button"
+          onClick={goLogin}
+        >RATE & REVIEW THIS MOVIE</button>
+      
       <div className="star-rating">
-        {[...Array(5)].map((star, index) => {
+      <p>Your rating: </p>
+      {[...Array(5)].map((star, index) => {
           index += 1;
           return (
             <button
@@ -75,6 +86,7 @@ function DetailsMovie() {
           );
         })}
       </div>
+  
     </div>
   );
 }

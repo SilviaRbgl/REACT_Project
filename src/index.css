@@ -110,6 +110,13 @@ input::placeholder {
 .Card-Single button{
   background: var(--primary);
 }
+.Card-Login {
+  margin: 50px;
+  padding: 20px;
+  text-align: center;
+  border: 3px solid var(--third);
+  border-radius: 20px;
+}
 .star-rating button{
   background-color: transparent;
   border: none;

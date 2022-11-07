@@ -8,13 +8,31 @@ function Login() {
   };
 
   return (
-    <div className="Container">
-      <p>Welcome to Log In page of moviestowatch.com.</p>
-      <p>I have to still build this page, so be patiente.</p>
+    <div className="Card-Login">
+      <h1>LOG IN</h1>
+    
+        <p>Username</p>
+        <label for="uname"></label>
+        <input type="text" placeholder="Enter Username" name="uname" required />
 
-      <p>New here? You can register here:</p>
+        <p>Password</p>
+        <label for="psw"></label>
+        <input
+          type="password"
+          placeholder="Enter Password"
+          name="psw"
+          required
+        />
+
+        <button className="Button" onClick={goRegister}>
+          LOG IN
+        </button>
+        <br></br>     
+        <input type="checkbox" checked="checked" name="remember" />Remeber me<br></br>
+      
+        <p>Don't have an account?</p>
       <button className="Button" onClick={goRegister}>
-        REGISTER
+        SIGN UP HERE
       </button>
     </div>
   );
