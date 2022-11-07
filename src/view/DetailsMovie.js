@@ -4,12 +4,14 @@ import { data2 } from "../API-data/response2";
 import Movies from "./Movies";
 
 function DetailsMovie() {
-  console.log(useParams());
+  // console.log(useParams());
   const { id } = useParams();
 
   const [singleMovie, setSingleMovie] = useState([]);
   const [rating, setRating] = useState(0);
   const [hover, setHover] = useState(0);
+  const [actors, setActors] = useState([]);
+  console.log(actors);
 
   const fetchSingleMovie = async () => {
     try {
@@ -30,14 +32,31 @@ function DetailsMovie() {
     fetchSingleMovie();
   }, []);
 
+  // const filterActors = () => {
+  //   const filteredActors = actors.filter((actor) => {
+  //     return actor.actorList.name.toLowerCase()     
+  //   })
+  //   return filteredActors;
+  // }
+  // console.log("filter actors >>>", filterActors);
+
   return (
-    <div className="Container">
-      <h2>{singleMovie.fullTitle}</h2>
-      <h4>Directed by: {singleMovie.directors}</h4>
-      <div className="Card-Single">
-        <img src={singleMovie.image} alt="poster of the movie" />
+    <div className="Container-Detail">
+      <h3>{singleMovie.fullTitle}</h3>
+      <p>Directed by: {singleMovie.directors}</p>
+      
+      <p>Cast:
+        {/* {filterActors().map((actor) => {
+          return actors={}
+        })} */}
+        </p>
+
+      <div className="">
+        <p><img src={singleMovie.image} alt="poster of the movie"/>Plot: {singleMovie.plot}</p>
+        
+        
       </div>
-      <p>Plot: {singleMovie.plot}</p>
+      
       <p>Users Rating: {singleMovie.imDbRating}</p>
       <div className="star-rating">
         {[...Array(5)].map((star, index) => {

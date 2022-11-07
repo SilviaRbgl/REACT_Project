@@ -75,7 +75,7 @@ body {
 }
 .Button:hover{
   color: var(--fourth);
-  background: var(--primary);
+  background: var(--third);
 }
 input,textarea{
   background: rgba(255, 255, 255, 0.05);
@@ -179,6 +179,19 @@ p{
 .Container {
   margin: 15px 30px;
   text-align: center;
+}
+.Container-Detail {
+  margin: 15px 30px;
+  text-align:left;
+}
+.Container-Detail img {
+  width: 45%;
+  margin-left: 0px 0px 15px 15px;
+  float: right;
+}
+/* NET NIJA: Mobile-First Responsive Build #8
+.Container img {
+  width: 130%;
 }
   
 

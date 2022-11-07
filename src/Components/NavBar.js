@@ -1,22 +1,28 @@
-import React from "react";
+import React, { useContext } from "react";
 import '../index.css';
 import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../Context/AuthContext";
 import movieIcon from '../images/movieIcon.png';
 
 function NavBar() {
   // console.log(movieIcon);
-  
+
+  const clickLogin = useNavigate();
+  const goLogin = () => {
+    clickLogin("/login");
+  };
+
+
   return (
     <div className="NavBar grid">
       <ul>
         {/* <img src={movieIcon} alt="logo"/> */}
         <NavLink to="/">Home</NavLink>{" "}
         <NavLink to="/movies">Movies</NavLink>{" "}
-        {/* <NavLink to="/login">Log in</NavLink> */}
-        {/* <NavLink to="/register">Register</NavLink> */}
         <button
           className="Button"
-          onClick={() => console.log("you clicked logIn button")}
+          onClick={goLogin}
         >LOG IN</button>
       </ul>
     </div>
