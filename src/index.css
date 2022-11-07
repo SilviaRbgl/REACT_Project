@@ -1,8 +1,8 @@
 /* VARIABLES */
 :root{
-  --primary: #00C2FF;
+  --primary: #00B271;
   --secondary: #F09F60;
-  --third: #00B271;
+  --third: #00C2FF;
   --fourth: #E5EEDE;
 }
 
@@ -81,8 +81,8 @@ input,textarea{
   background: rgba(255, 255, 255, 0.05);
   padding: 10px 16px;
   border-radius: 20px;
-  border: 2px solid var(--third);
-  color: var(--third);
+  border: 2px solid var(--primary);
+  color: var(--primary);
 }
 a{
   text-decoration: none;
@@ -91,7 +91,7 @@ a{
 }
 input::placeholder {
   font-family: Quicksand;
-  color: var(--third);
+  color: var(--primary);
   text-transform: uppercase;
 }
 .Card-Single {
@@ -108,7 +108,7 @@ input::placeholder {
   /* border-radius: 15px; */
 }
 .Card-Single button{
-  background: var(--third);
+  background: var(--primary);
 }
 .star-rating button{
   background-color: transparent;
@@ -161,7 +161,7 @@ p{
 .NavBar {
   margin: 0;
   padding: 20px;
-  background: var(--third);
+  background: var(--primary);
   color: var(--fourth);
   justify-content: center;
   display: flex;

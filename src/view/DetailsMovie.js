@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { data2 } from "../API-data/response2";
 import Movies from "./Movies";
 
 function DetailsMovie() {
@@ -12,14 +13,14 @@ function DetailsMovie() {
 
   const fetchSingleMovie = async () => {
     try {
-      const url = `https://imdb-api.com/en/API/Title/${process.env.REACT_APP_KEY}/${id}`;
-      const response = await fetch(url);
-      const result = await response.json();
-      setSingleMovie(result);
-      // setMovies(data.items); // use this line if you want to preserve the "fetch" behaviour, but with local data
-      // console.log("movies from data>>>", data.items);
-      console.log("single movies>>>", result.id);
-      console.log(result);
+      // const url = `https://imdb-api.com/en/API/Title/${process.env.REACT_APP_KEY}/${id}`;
+      // const response = await fetch(url);
+      // const result = await response.json();
+      // setSingleMovie(result);
+      setSingleMovie(data2); // use this line if you want to preserve the "fetch" behaviour, but with local data
+      console.log("movies from data>>>", data2);
+      // console.log("single movies>>>", result.id);
+      // console.log(result);
     } catch (error) {
       console.log(error);
     }

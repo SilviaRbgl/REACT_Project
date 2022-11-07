@@ -1,5 +1,5 @@
 import React from "react";
-import Movies from "./Movies";
+// import Movies from "./Movies";
 import { useNavigate } from "react-router-dom";
 import movieIcon from '../images/movieIcon.png';
 
@@ -9,15 +9,15 @@ function Home() {
     clickSearch("/movies");
   };
 
-  const clickLogin = useNavigate();
-  const goLogin = () => {
-    clickLogin("/login");
-  };
+  // const clickLogin = useNavigate();
+  // const goLogin = () => {
+  //   clickLogin("/login");
+  // };
 
-  const clickRegister = useNavigate();
-  const goRegister = () => {
-    clickRegister("/register");
-  };
+  // const clickRegister = useNavigate();
+  // const goRegister = () => {
+  //   clickRegister("/register");
+  // };
 
   return (
     <div className="Container">
