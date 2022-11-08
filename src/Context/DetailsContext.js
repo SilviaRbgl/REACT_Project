@@ -4,11 +4,12 @@ import { data2 } from "../API-data/response2";
 export const DetailsContext = createContext();
 
 export const DetailsContextProvider = (props) => {
-  console.log("props >>>", props);
+  // console.log("props >>>", props);
 
   const [singleMovie, setSingleMovie] = useState([]);
   const [error, setError] = useState(null);
   const [actors, setActors] = useState([]);
+  console.log("actors>>>", actors);
 
   const fetchSingleMovie = async () => {
     try {
@@ -21,7 +22,7 @@ export const DetailsContextProvider = (props) => {
       // console.log("single movies>>>", result.id);
       // console.log(result);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
 
