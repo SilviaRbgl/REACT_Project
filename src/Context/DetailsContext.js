@@ -8,8 +8,6 @@ export const DetailsContextProvider = (props) => {
 
   const [singleMovie, setSingleMovie] = useState([]);
   const [error, setError] = useState(null);
-  const [actors, setActors] = useState([]);
-  console.log("actors>>>", actors);
 
   const fetchSingleMovie = async () => {
     try {
@@ -27,7 +25,7 @@ export const DetailsContextProvider = (props) => {
   };
 
   return (
-    <DetailsContext.Provider value={{ singleMovie, error, actors, fetchSingleMovie }}>
+    <DetailsContext.Provider value={{ singleMovie, error, fetchSingleMovie }}>
       {props.children}
     </DetailsContext.Provider>
   );
