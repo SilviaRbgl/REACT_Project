@@ -2,17 +2,14 @@ import React, { useContext } from "react";
 import '../index.css';
 import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../Context/AuthContext";
 import movieIcon from '../images/movieIcon.png';
 
 function NavBar() {
-  // console.log(movieIcon);
 
   const clickLogin = useNavigate();
   const goLogin = () => {
     clickLogin("/login");
   };
-
 
   return (
     <div className="NavBar grid">

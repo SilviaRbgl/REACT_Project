@@ -7,22 +7,22 @@ import NavBar from "./Components/NavBar";
 import NoMatch from "./view/NoMatch";
 import DetailsMovie from "./view/DetailsMovie";
 import "./index.css";
-import { AuthContextProvider } from "./Context/AuthContext";
+import { DetailsContextProvider } from "./Context/DetailsContext";
 
 function App() {
   return (
-    <div className="App">
-      <AuthContextProvider>
+    <div className="App">   
         <NavBar />
+        <DetailsContextProvider>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="movies" element={<Movies />} />
-          <Route path="movies/:id" element={<DetailsMovie />} />
+          <Route path="movies" element={<Movies />} />        
+          <Route path="movies/:id" element={<DetailsMovie />} />        
           <Route path="login" element={<Login />} />
           <Route path="signup" element={<Signup />} />
           <Route path="*" element={<NoMatch />} />
         </Routes>
-      </AuthContextProvider>
+        </DetailsContextProvider>
     </div>
   );
 }
