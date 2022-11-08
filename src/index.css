@@ -67,7 +67,7 @@ body {
   padding: 5px 10px;
   border-radius: 20px;
   text-transform: uppercase;
-  display: inline-block;
+  display:inline-block;
   /* font-family: Quicksand; */ 
   /* color: #E5EEDE;
   text-decoration: none;
@@ -105,6 +105,7 @@ input::placeholder {
 }
 .Card-Single img {
   width: 100%;
+  max-height: 190px;
   /* border-radius: 15px; */
 }
 .Card-Single button{
@@ -206,9 +207,17 @@ p{
   margin-left: 0px 0px 15px 15px;
   float: right;
 }
-/* NET NIJA: Mobile-First Responsive Build #8
+/* NET NIJA: Mobile-First Responsive Build #8 
 .Container img {
   width: 130%;
+} */
+.Container-Comment button {
+  background-color: var(--third);
+}
+.Container-Comment input,textarea {
+  padding-bottom: 50px;
+  margin-bottom: 5px;
+  border: 2px solid var(--third);
 }
   
 

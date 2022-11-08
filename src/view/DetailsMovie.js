@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { data2 } from "../API-data/response2";
 import { DetailsContext } from "../Context/DetailsContext";
+import Review from "../Components/Review"
 import Movies from "./Movies";
 
 function DetailsMovie() {
@@ -18,10 +19,28 @@ function DetailsMovie() {
     clickLogin("/login");
   };
 
+  // const [reviews, setReviews] = useState([]);
+  // const [error, setError] = useState(null);
+
+  // const fetchReviews = async () => {
+  //   try {
+  //     const url = `https://imdb-api.com/en/API/Reviews/${process.env.REACT_APP_KEY}/${id}`;
+  //     const response = await fetch(url);
+  //     const result = await response.json();
+  //     setReviews(result);
+  //     // setSingleMovie(data2); // use this line if you want to preserve the "fetch" behaviour, but with local data
+  //     // console.log("movies from data>>>", data3);
+  //     console.log("reviews>>>", result.items);
+  //     console.log(result);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+
   useEffect(() => {
     fetchSingleMovie();
+    // fetchReviews();
   }, []);
-
 
 
   return (
@@ -47,9 +66,10 @@ function DetailsMovie() {
         >RATE & REVIEW THIS MOVIE</button>
 
       <div className="star-rating">
-        <p>Your rating: </p>{[...Array(5)].map((star, index) => {
+      <p>Your rating: </p>{[...Array(5)].map((index) => {
           index += 1;
           return (
+            <>
             <button
               type="button"
               key={index}
@@ -58,8 +78,9 @@ function DetailsMovie() {
               onMouseEnter={() => setHover(index)}
               onMouseLeave={() => setHover(rating)}
             >
-              <span className="star">&#9733;</span>
+            <span className="star">&#9733;</span>
             </button>
+            </>
           );
         })}
       </div>
@@ -74,6 +95,17 @@ function DetailsMovie() {
           required
         /><br></br>
         <button type="submit" className="Button">Send</button>
+      </div>
+
+      <div className="Container-Comment">
+      {/* <p>Users reviews:</p>
+      <div className="grid">
+        {reviews.map((review) => {
+          return <Review key={review.id} review={review}/>;
+        })}
+      </div> */}
+      
+      
       </div>
     </div>
   );
