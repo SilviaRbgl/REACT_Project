@@ -18,7 +18,7 @@ export const DetailsContextProvider = (props) => {
       // const result = await response.json();
       // setSingleMovie(result);
       setSingleMovie(data2); // use this line if you want to preserve the "fetch" behaviour, but with local data
-      console.log("movies from data>>>", data2);
+      console.log("single movies>>>", data2);
       // console.log("single movies>>>", result.id);
       // console.log(result);
     } catch (error) {
