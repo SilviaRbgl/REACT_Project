@@ -10,10 +10,10 @@ import DetailsMovie from "./view/DetailsMovie";
 import "./index.css";
 import { DetailsContextProvider } from "./Context/DetailsContext";
 import { AuthContextProvider } from "./Context/AuthContext";
-import { app } from "./config";
+import { app, auth } from "./config";
 
 function App() {
-  
+
   return (
     <div className="App">
       <AuthContextProvider>
