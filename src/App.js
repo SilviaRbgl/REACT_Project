@@ -7,12 +7,13 @@ import NavBar from "./Components/NavBar";
 import NoMatch from "./view/NoMatch";
 import DetailsMovie from "./view/DetailsMovie";
 // import DetailsMovieAuth from "./view/DetailsMovieAuth"
-
 import "./index.css";
 import { DetailsContextProvider } from "./Context/DetailsContext";
 import { AuthContextProvider } from "./Context/AuthContext";
+import { app } from "./config";
 
 function App() {
+  
   return (
     <div className="App">
       <AuthContextProvider>

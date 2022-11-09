@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import React from "react";
+import nomatchvideo from "../images/nomatchvideo.mov";
 
 function NoMatch() {
   return (
@@ -9,8 +10,9 @@ function NoMatch() {
         src="https://giphy.com/embed/jcxtvm2bsZDH2"
         width="320"
         height="227"
-        class="giphy-embed"
+        className="giphy-embed"
       ></iframe>
+      {/* <video src={nomatchvideo} width="600" height="300" autoplay="true" /> */}
     </div>
   );
 }
