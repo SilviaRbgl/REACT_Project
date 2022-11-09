@@ -3,8 +3,10 @@ import '../index.css';
 import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import movieIcon from '../images/movieIcon.png';
+import { AuthContext } from "../Context/AuthContext";
 
 function NavBar() {
+  const { user, setUser } = useContext(AuthContext);
 
   const clickLogin = useNavigate();
   const goLogin = () => {

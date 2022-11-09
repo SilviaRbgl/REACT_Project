@@ -12,11 +12,11 @@ function Login() {
       <h1>LOG IN</h1>
     
         <p>Username</p>
-        <label for="uname"></label>
+        <label htmlFor="uname"></label>
         <input type="text" placeholder="Enter Username" name="uname" required />
 
         <p>Password</p>
-        <label for="psw"></label>
+        <label htmlFor="psw"></label>
         <input
           type="password"
           placeholder="Enter Password"
@@ -28,7 +28,10 @@ function Login() {
           LOG IN
         </button>
         <br></br>     
-        <input type="checkbox" checked="checked" name="remember" />Remeber me<br></br>
+        <input 
+        type="checkbox" 
+        // checked="checked" 
+        name="remember" />Remeber me<br></br>
       
         <p>Don't have an account?</p>
       <button className="Button" onClick={goSignup}>

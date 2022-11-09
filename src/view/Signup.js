@@ -6,11 +6,11 @@ function Signup() {
       <h1>SIGN UP</h1>
     
         <p>Username</p>
-        <label for="uname"></label>
+        <label htmlFor="uname"></label>
         <input type="text" placeholder="Enter Username" name="uname" required />
 
         <p>Password</p>
-        <label for="psw"></label>
+        <label htmlFor="psw"></label>
         <input
           type="password"
           placeholder="Enter Password"

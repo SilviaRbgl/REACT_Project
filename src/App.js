@@ -10,22 +10,24 @@ import DetailsMovie from "./view/DetailsMovie";
 
 import "./index.css";
 import { DetailsContextProvider } from "./Context/DetailsContext";
+import { AuthContextProvider } from "./Context/AuthContext";
 
 function App() {
   return (
-    <div className="App">   
+    <div className="App">
+      <AuthContextProvider>
         <NavBar />
         <DetailsContextProvider>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="movies" element={<Movies />} />        
-          <Route path="movies/:id" element={<DetailsMovie />} />
-          {/* <Route path="movies/:id" element={<DetailsMovieAuth />} />          */}
-          <Route path="login" element={<Login />} />
-          <Route path="signup" element={<Signup />} />
-          <Route path="*" element={<NoMatch />} />
-        </Routes>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="movies" element={<Movies />} />
+            <Route path="movies/:id" element={<DetailsMovie />} />
+            <Route path="login" element={<Login />} />
+            <Route path="signup" element={<Signup />} />
+            <Route path="*" element={<NoMatch />} />
+          </Routes>
         </DetailsContextProvider>
+      </AuthContextProvider>
     </div>
   );
 }
