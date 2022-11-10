@@ -1,4 +1,4 @@
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, Link, NavLink } from "react-router-dom";
 import Home from "./view/Home";
 import Movies from "./view/Movies";
 import Login from "./view/Login";
@@ -11,13 +11,21 @@ import "./index.css";
 import { DetailsContextProvider } from "./Context/DetailsContext";
 import { AuthContextProvider } from "./Context/AuthContext";
 import { app, auth } from "./config";
+import NavBarItem from "./Components/NavBarItem";
+import { GiFilmStrip } from "react-icons/gi";
 
 function App() {
 
   return (
     <div className="App">
       <AuthContextProvider>
-        <NavBar />
+        <NavBar> 
+          <NavBarItem icon={<GiFilmStrip />}>
+            <NavLink to="/">Home</NavLink>{" "}
+            <NavLink to="/movies">Search movies</NavLink>{" "}
+            <NavLink to="/login">Log in</NavLink>{" "}
+          </NavBarItem>
+        </NavBar>
         <DetailsContextProvider>
           <Routes>
             <Route path="/" element={<Home />} />
