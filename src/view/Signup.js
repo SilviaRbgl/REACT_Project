@@ -5,11 +5,12 @@ import { AuthContext } from "../Context/AuthContext";
 
 function Signup() {
 
-  const {register} = useContext(AuthContext)
+  const {signUp} = useContext(AuthContext)
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [userName, setUserName] = useState("")
+  const [userName, setUserName] = useState("");
+  
 
   const handleEmailChange = (e) => {
     console.log("email>", e.target.value);
@@ -27,7 +28,7 @@ function Signup() {
   }
 
   const handleSignup = () => {
-    register(email, password, updateProfile(auth.displayName))
+    signUp(userName, email, password)
   }
 
   return (
@@ -36,7 +37,7 @@ function Signup() {
 
       <p>Username</p>
       <label htmlFor="name"></label>
-      <input type="text" placeholder="Enter username" name="text" value={userName} required />
+      <input type="text" placeholder="Enter username" name="text" value={userName} onChange={handleUsernameChange} required />
 
       <p>Email</p>
       <label htmlFor="email"></label>
