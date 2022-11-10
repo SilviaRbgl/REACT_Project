@@ -194,6 +194,13 @@ p{
 /* .NavBar img{
   width: 10%;
 } */
+.Avatar{
+  vertical-align: middle;
+  float: right;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
 .Container {
   margin: 15px 30px;
   text-align: center;
