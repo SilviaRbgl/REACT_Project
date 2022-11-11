@@ -279,7 +279,11 @@ p{
   margin-bottom: 5px;
   border: 2px solid var(--third);
 }
-  
+.container-review{
+  padding-bottom: 50px;
+  margin-bottom: 5px;
+  border: 2px solid var(--third);
+}
 
 /* SMALL TABLES STYLES */
 @media screen and (min-width: 620px) {
