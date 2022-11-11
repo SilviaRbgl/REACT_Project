@@ -17,15 +17,28 @@ export const AuthContextProvider = (props) => {
   const [user, setUser] = useState(null);
   const redirectTo = useNavigate();
 
-  const signUp = async (email, password, displayName) => {
+  const signUp = async (displayName, email, password,) => {
     console.log("displayName, email, password", email, password, displayName);
     try {
       const userSignUp = await createUserWithEmailAndPassword(
         auth,
         email,
         password,
-        displayName
       );
+    
+      updateProfile(auth.currentUser, {
+        displayName: displayName, 
+      }).then(() => {
+        // Profile updated!
+        // ...
+        console.log("profile updated");
+      }).catch((error) => {
+        // An error occurred
+        // ...
+        console.log('ereror :>> ', error);
+      });
+      
+
       console.log("userCredentials>", userSignUp);
       setUser(userSignUp);
       redirectTo("/");

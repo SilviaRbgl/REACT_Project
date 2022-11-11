@@ -1,21 +1,23 @@
 import React from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 
 function Dropdown() {
   function DropdownItem(props) {
-    return <a className="dropdown-item">{props.children}</a>;
+    console.log('props :>> ', props);
+    return <NavLink className="dropdown-item" to={props.page}>{props.children}</NavLink>;
   }
 
   const clickHome = useNavigate();
-  const goHome = () => {
-    clickHome("/");
-  };
+//   const goHome = () => {
+//     clickHome("/");
+//   };
 
   return (
     <div className="Dropdown">
-      <DropdownItem href="/">Home</DropdownItem>
-      <DropdownItem href="/movies">Search movies</DropdownItem>
-      <DropdownItem onClick={goHome}>Log in</DropdownItem>
+      
+      <DropdownItem page="/">Home</DropdownItem>
+      <DropdownItem page="/movies">Search movies</DropdownItem>
+      <DropdownItem page="/login">Log in</DropdownItem>
     </div>
   );
 }
