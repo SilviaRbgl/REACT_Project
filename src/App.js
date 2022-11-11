@@ -14,13 +14,14 @@ import { app, auth } from "./config";
 import NavBarItem from "./Components/NavBarItem";
 import { GiFilmStrip } from "react-icons/gi";
 import Dropdown from "./Components/Dropdown";
+import ProfileUser from "./view/ProfileUser";
+import ProtectedRoute from "./Components/ProtectedRoute";
 
 function App() {
-
   return (
     <div className="App">
       <AuthContextProvider>
-        <NavBar> 
+        <NavBar>
           <NavBarItem icon={<GiFilmStrip />}>
             <Dropdown></Dropdown>
           </NavBarItem>
@@ -32,6 +33,14 @@ function App() {
             <Route path="movies/:id" element={<DetailsMovie />} />
             <Route path="login" element={<Login />} />
             <Route path="signup" element={<Signup />} />
+            <Route
+              path="profile"
+              element={
+                <ProtectedRoute>
+                  <ProfileUser />
+                </ProtectedRoute>
+              }
+            />
             <Route path="*" element={<NoMatch />} />
           </Routes>
         </DetailsContextProvider>

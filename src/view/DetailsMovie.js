@@ -2,18 +2,18 @@ import React, { useContext, useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { data2 } from "../API-data/response2";
 import { DetailsContext } from "../Context/DetailsContext";
-import Review from "../Components/Review";
+import Reviews from "../Components/Reviews";
+import DetailsMovieAuth from "../Components/DetailsMovieAuth";
 import Movies from "./Movies";
+import { AuthContext } from "../Context/AuthContext";
 
 function DetailsMovie() {
   // console.log(useParams());
   const { id } = useParams();
-  const user = "";
 
+  const { user } = useContext(AuthContext);
   const { singleMovie, fetchSingleMovie } = useContext(DetailsContext);
 
-  const [rating, setRating] = useState(0);
-  const [hover, setHover] = useState(0);
 
   const clickLogin = useNavigate();
   const goLogin = () => {
@@ -61,9 +61,15 @@ function DetailsMovie() {
       </div>
 
       <p>User rating: {singleMovie.imDbRating}</p>
-      <button className="Button" onClick={goLogin}>
+
+      { user ?  (
+        <DetailsMovieAuth />
+      ) : (
+        <button className="Button" onClick={goLogin}>
         RATE & REVIEW THIS MOVIE
       </button>
+      )
+      }
     </div>
   );
 }

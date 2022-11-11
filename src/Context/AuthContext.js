@@ -79,6 +79,7 @@ export const AuthContextProvider = (props) => {
 
   const logOut = () => {
     signOut(auth).then(() => {
+      redirectTo("/")
     }).catch((error) => {
     });
   }

@@ -1,8 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 function ProfileUser() {
+
+
   return (
-    <div>ProfileUser</div>
+    <div className="Container-Profile">
+       <h3>Hello User</h3>
+
+
+
+
+    </div>
   )
 }
 
