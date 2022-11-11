@@ -4,13 +4,11 @@ function NavBarItem(props) {
   const [open, setOpen] = useState(false);
 
   return (
-    <li>
-      <a href="#" className="button" onClick={() => setOpen(!open)}>
+    <li className="nav-item">
+      <a href="#" className="icon-button" onClick={() => setOpen(!open)}>
         {props.icon}
       </a>
-
-      {open && props.children}
-      
+      {open && props.children}   
     </li>
   );
 }

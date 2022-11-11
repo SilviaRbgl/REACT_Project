@@ -15,7 +15,7 @@ function NavBar(props) {
   };
 
   return (
-    <nav className="NavBar grid">
+    <nav className="NavBar">
       <ul>{ props.children }
         {/* <img src={movieIcon} alt="logo"/> */}
         {/* <NavLink to="/">Home</NavLink> <NavLink to="/movies">Movies</NavLink>{" "} */}

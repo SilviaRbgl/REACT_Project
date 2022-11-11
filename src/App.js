@@ -13,6 +13,7 @@ import { AuthContextProvider } from "./Context/AuthContext";
 import { app, auth } from "./config";
 import NavBarItem from "./Components/NavBarItem";
 import { GiFilmStrip } from "react-icons/gi";
+import Dropdown from "./Components/Dropdown";
 
 function App() {
 
@@ -21,9 +22,7 @@ function App() {
       <AuthContextProvider>
         <NavBar> 
           <NavBarItem icon={<GiFilmStrip />}>
-            <NavLink to="/">Home</NavLink>{" "}
-            <NavLink to="/movies">Search movies</NavLink>{" "}
-            <NavLink to="/login">Log in</NavLink>{" "}
+            <Dropdown></Dropdown>
           </NavBarItem>
         </NavBar>
         <DetailsContextProvider>

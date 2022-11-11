@@ -4,6 +4,9 @@
   --secondary: #F09F60;
   --third: #00C2FF;
   --fourth: #E5EEDE;
+  --nav-size: 60px;
+
+  /* --speed: 500ms; */
 }
 
 
@@ -140,7 +143,27 @@ input::placeholder {
 .off {
   color: #ccc;
 }
-
+.Dropdown{
+  position:absolute;
+  top: 58px;
+  /* width: 300px; */
+  transform: translateX(-45%);
+  background-color: var(--primary);
+  /* border: var(--border); */
+  /* border-radius: var(--border-radius); */
+  padding: 0.6rem;
+  overflow:hidden;
+}
+.dropdown-item{
+  height: 10px;
+  display: flex;
+  align-items: center;
+  transition: background var(--speed);
+  padding: 0.6rem;
+}
+.dropdown-item:hover {
+  background-color: #F09F60;
+}
 
 /* FONTS */
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
@@ -183,17 +206,44 @@ p{
   color: var(--fourth);
   justify-content: center;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-end;
 }
 .NavBar ul{
   /* list-style-type: none;
   overflow: hidden; */
-  grid-column: 1/4;
-  grid-row: 1;
+  list-style: none;
+  /* grid-column: 1/4;
+  grid-row: 1; */
+  display: flex;
+  justify-content: flex-end;
+  height: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
 }
 /* .NavBar img{
   width: 10%;
 } */
+.nav-item{
+  width: calc(var(--nav-size) * 0.8);
+  display: flex;
+  justify-content: center;
+}
+.icon-button{
+  --button-size: calc(var(--nav-size) * 0.5);
+  width: (--button-size);
+  height: (--button-size);
+  background-color: var(--secondary);
+  border-radius: 50%;
+  padding: 5px;
+  margin: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon-button:hover{
+  filter: brightness(1.2);
+}
 .Avatar{
   vertical-align: middle;
   float: right;
