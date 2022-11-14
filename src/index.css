@@ -142,7 +142,7 @@ input::placeholder {
 .off {
   color: #ccc;
 }
-.Dropdown{
+.dropdown{
   position:absolute;
   top: 58px;
   /* width: 300px; */
@@ -233,7 +233,7 @@ p{
   width: (--button-size);
   height: (--button-size);
   background-color: var(--secondary);
-  border-radius: 50%;
+  border-radius: 590%;
   padding: 5px;
   margin: 2px;
   display: flex;
@@ -243,13 +243,13 @@ p{
 .icon-button:hover{
   filter: brightness(1.2);
 }
-.Avatar{
+/* .Avatar{
   vertical-align: middle;
   float: right;
   width: 30px;
   height: 30px;
   border-radius: 50%;
-}
+} */
 .Container {
   margin: 15px 30px;
   text-align: center;

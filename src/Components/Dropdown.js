@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Context/AuthContext";
-import ProtectedRoute from "./ProtectedRoute";
 
 function Dropdown() {
   const { user, logOut } = useContext(AuthContext);
@@ -16,18 +15,15 @@ function Dropdown() {
   }
 
   return (
-    <div className="Dropdown">
+    <div className="dropdown">
       <DropdownItem page="/">Home</DropdownItem>
       <DropdownItem page="/movies">Search movies</DropdownItem>
-      {/* <ProtectedRoute> */}
-        <DropdownItem page="/profile">My Profile</DropdownItem>
-      {/* </ProtectedRoute> */}
-      { user ?  (
+      <DropdownItem page="/profile">My Profile</DropdownItem>
+      {user ? (
         <DropdownItem logout={logOut}>Log out</DropdownItem>
       ) : (
         <DropdownItem page="/login">Log in</DropdownItem>
-      )
-      }
+      )}
     </div>
   );
 }

@@ -60,6 +60,8 @@ function DetailsMovie() {
         </p>
       </div>
 
+      <p>Genre: {singleMovie.genres}</p>
+      <p>Duration: {singleMovie.runtimeStr}</p>
       <p>User rating: {singleMovie.imDbRating}</p>
 
       { user ?  (

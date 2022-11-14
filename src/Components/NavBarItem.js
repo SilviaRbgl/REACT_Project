@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 function NavBarItem(props) {
   const [open, setOpen] = useState(false);
@@ -8,7 +8,7 @@ function NavBarItem(props) {
       <a href="#" className="icon-button" onClick={() => setOpen(!open)}>
         {props.icon}
       </a>
-      {open && props.children}   
+      {open && props.children}
     </li>
   );
 }
