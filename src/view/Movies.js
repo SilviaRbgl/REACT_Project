@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { data } from "../API-data/response";
 import Movie from "../Components/Movie";
-import Pagination from "../Components/Pagination";
 import SearchBar from "../Components/SearchBar";
 
 function Movies() {
@@ -60,7 +59,10 @@ function Movies() {
         {filterMovies().map((movie) => {
           return <Movie key={movie.id} movie={movie} search={search} />;
         })}
-      <Pagination />
+      </div>
+      <div className="pagination">
+      <button className="Button">Prev</button>
+      <button className="Button">Next</button>
       </div>
     </div>
   );

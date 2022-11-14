@@ -76,15 +76,15 @@ body {
   font-size: 16px; */
 }
 .Button:hover{
-  color: var(--fourth);
-  /* background: var(--third); */
+  /* color: var(--fourth); */
+  background: var(--third);
 }
 input,textarea{
   background: rgba(255, 255, 255, 0.05);
   padding: 10px 16px;
   border-radius: 20px;
   border: 2px solid var(--primary);
-  color: var(--primary);
+  color: black;
 }
 a{
   text-decoration: none;
@@ -137,7 +137,7 @@ input::placeholder {
   cursor: pointer;
 }
 .on {
-  color: var(--primary)
+  color: var(--third)
 }
 .off {
   color: #ccc;
@@ -145,10 +145,10 @@ input::placeholder {
 .dropdown{
   position:absolute;
   top: 58px;
-  /* width: 300px; */
+  width: 150px;
   transform: translateX(-45%);
   background-color: var(--primary);
-  /* border: var(--border); */
+  border: var(--border);
   /* border-radius: var(--border-radius); */
   padding: 0.6rem;
   overflow:hidden;
@@ -163,6 +163,10 @@ input::placeholder {
 .dropdown-item:hover {
   background-color: #F09F60;
 }
+.dropdown-item:active {
+  background-color: #F09F60;
+}
+
 
 /* FONTS */
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
@@ -226,7 +230,7 @@ p{
 .nav-item{
   width: calc(var(--nav-size) * 0.8);
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
 }
 .icon-button{
   --button-size: calc(var(--nav-size) * 0.5);
@@ -263,10 +267,10 @@ p{
   margin-left: 0px 0px 15px 15px;
   float: right;
 }
-/* NET NIJA: Mobile-First Responsive Build #8 
+/* NET NIJA: Mobile-First Responsive Build #8 */
 .Container img {
-  width: 130%;
-} */
+  max-width: 100%;
+}
 .Container-Profile{
   margin: 15px 30px;
   text-align:left;
