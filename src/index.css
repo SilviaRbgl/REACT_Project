@@ -277,12 +277,22 @@ p{
 .Container-Comment input,textarea {
   padding-bottom: 50px;
   margin-bottom: 5px;
+  width: 85%;
   border: 2px solid var(--third);
 }
 .container-review{
-  padding-bottom: 50px;
+  padding: 10px;
   margin-bottom: 5px;
-  border: 2px solid var(--third);
+  border: 2px solid var(--secondary);
+  border-radius: 20px;
+  background-color: var(--secondary);
+}
+.container-review p {
+  font-size: 0.9em;
+  font-style: italic;
+}
+.container-review h4 {
+  font-size: 1.2em;
 }
 
 /* SMALL TABLES STYLES */
