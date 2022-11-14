@@ -1,11 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../Context/AuthContext";
 
 function NavBarItem(props) {
-  const [open, setOpen] = useState(false);
+  // console.log('props :>> ', props);
+  // const [open, setOpen] = useState(false);
+  const { handleDropdown, open } = useContext(AuthContext);
+
+
+  // const handleDropdown = () => setOpen(!open)
 
   return (
     <li className="nav-item">
-      <a href="#" className="icon-button" onClick={() => setOpen(!open)}>
+      <a href="#" className="icon-button" onClick={handleDropdown}>
         {props.icon}
       </a>
       {open && props.children}

@@ -18,7 +18,15 @@ function Movies() {
       // const response = await fetch();
       // const result = await response.json();
       // setMovies(result.items);
-      setMovies(data.items); // use this line if you want to preserve the "fetch" behaviour, but with local data
+      const paginatedFilms = []
+data.items.map((res, index)=> {
+  if(10 > index <= 20) { // create variables for each number, modifie those values with onclick, and put them in the useEffect as dependecy
+    paginatedFilms.push(res)
+  }
+  console.log('paginatedFilms :>> ', paginatedFilms);
+})
+setMovies(paginatedFilms)
+      // setMovies(data.items); // use this line if you want to preserve the "fetch" behaviour, but with local data
       console.log("movies from data>>>", data.items);
       // console.log("movies>>>", result.items);
       setPages(data.items)
@@ -47,16 +55,16 @@ function Movies() {
     return filteredMovies;
   };
 
-  const handlePageChange = (e, p) => {
-    setCurrentPage(p);
-  };
+  // const handlePageChange = (e, p) => {
+  //   setCurrentPage(p);
+  // };
 
 
   return (
     <div className="Container">
       <SearchBar getInput={getInput} />
       <div className="grid">
-        {filterMovies().map((movie) => {
+        {filterMovies().map((movie, index) => {
           return <Movie key={movie.id} movie={movie} search={search} />;
         })}
       </div>

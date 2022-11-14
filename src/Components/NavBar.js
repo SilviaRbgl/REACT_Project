@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../Context/AuthContext";
 
 function NavBar(props) {
+  // console.log('props Navabar :>> ', props);
   const { user, setUser, logOut } = useContext(AuthContext);
 
   return (

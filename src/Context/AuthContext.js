@@ -15,6 +15,7 @@ export const AuthContext = createContext();
 export const AuthContextProvider = (props) => {
   // console.log("props >>>", props);
   const [user, setUser] = useState(null);
+  const [open, setOpen] = useState(false)
   const redirectTo = useNavigate();
 
   const signUp = async (displayName, email, password,) => {
@@ -79,14 +80,16 @@ export const AuthContextProvider = (props) => {
     }).catch((error) => {
     });
   }
-
+const handleDropdown = ()=> {
+setOpen(!open)
+}
   useEffect(() => {
     checkIfUserIsLogged()
   }, [])
   
 
   return (
-    <AuthContext.Provider value={{ user, setUser, signUp, logIn, logOut }}>
+    <AuthContext.Provider value={{ user, setUser, signUp, logIn, logOut, handleDropdown, open }}>
       {props.children}
     </AuthContext.Provider>
   );

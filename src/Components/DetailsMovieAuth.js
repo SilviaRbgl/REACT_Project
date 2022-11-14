@@ -9,6 +9,8 @@ import {
   where,
   onSnapshot,
   orderBy,
+  setDoc,
+  doc,
 } from "firebase/firestore";
 import { async } from "@firebase/util";
 
@@ -35,9 +37,12 @@ function DetailsMovieAuth() {
     // }
 
     const q = query(collection(db, "Reviews"), orderBy("date"));
+    
     onSnapshot(q, (querySnapshot) => {
       const myMsgs = [];
+      
       querySnapshot.forEach((doc) => {
+
         myMsgs.push(doc.data());
       });
       setReviewsMsgs(myMsgs);
@@ -53,15 +58,22 @@ function DetailsMovieAuth() {
     setReview(e.target.value);
   };
 
+  
   const handleSubmit = async () => {
     console.log("review", review);
     try {
+      // await setDoc(doc(db, "Reviews", user.email),  {
+      //   text: review,
+      //   date: new Date(),
+      //   author: user.email,
+      // });//? to create a new document with a custom id (user email)
       const docRef = await addDoc(collection(db, "Reviews"), {
         text: review,
         date: new Date(),
         author: user.email,
       });
       console.log("Document written with ID: ", docRef.id);
+      console.log("suceesssss");
     } catch (e) {
       console.error("Error adding document: ", e);
     }

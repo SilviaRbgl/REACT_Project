@@ -3,21 +3,36 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Context/AuthContext";
 
 function Dropdown() {
-  const { user, logOut } = useContext(AuthContext);
+  const { user, logOut, handleDropdown } = useContext(AuthContext);
 
-  function DropdownItem(props) {
-    // console.log('props :>> ', props);
+  function DropdownItem({page, logout, children}) {
+    // console.log('logout dropdown :>> ', page);
+    const goTo= useNavigate()
+    const test = (e)=> {
+      e.preventDefault()
+      if(!logout) {
+        handleDropdown()
+        goTo(page)
+      } else {
+        handleDropdown()
+        logout()
+        goTo(page)
+      }
+      
+      
+    }
     return (
-      <NavLink className="dropdown-item" to={props.page} onClick={props.logout}>
-        {props.children}
+      <NavLink className="dropdown-item"  onClick={(e)=>test(e)} >
+        {children}
+      
       </NavLink>
     );
   }
 
   return (
     <div className="dropdown">
-      <DropdownItem page="/">Home</DropdownItem>
-      <DropdownItem page="/movies">Search movies</DropdownItem>
+      <DropdownItem page="/"  >Home</DropdownItem>
+      <DropdownItem page="/movies" >Search movies</DropdownItem>
       <DropdownItem page="/profile">My Profile</DropdownItem>
       {user ? (
         <DropdownItem logout={logOut}>Log out</DropdownItem>

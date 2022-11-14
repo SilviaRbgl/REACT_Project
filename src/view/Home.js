@@ -18,7 +18,7 @@ function Home() {
   return (
     <div className="Container">
       <h1>Welcome to moviestoreview</h1>
-      {/* <video controls autoPlay loop className="video" src={countdown} type="video/mp4" width="320" height="240" /> */}
+      {/* <video autoPlay="autoPlay" loop="loop" playsInline className="video" src={countdown} type="video/mp4" width="320" height="240" /> */}
       <img src={movieIcon} alt="logo" />
       {/* <iframe
         src="https://giphy.com/embed/A8OSeenhtpey43CcMG"
