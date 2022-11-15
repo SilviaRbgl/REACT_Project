@@ -26,10 +26,9 @@ function Reviews() {
         reviews.items?.map((review, index) => {
           return (
             <div key={index} className="container-review">
-              <p>
-                {review.username} & rate {review.rate}
-              </p>
-              <p>{review.content}</p>
+              <p>{review.username} wrote:</p>
+              <h4>"{review.content}"</h4>
+              <p>{review.date}</p>
             </div>
           );
         })}

@@ -128,7 +128,7 @@ function DetailsMovieAuth() {
           reviewsMsgs.map((msg, index) => {
             return (
               <div className="container-review" key={index}>
-                <p>{msg.author} says:</p>
+                <p>{msg.author} wrote:</p>
                 <h4>"{msg.text}"</h4>
                 <p>{msgDate(msg.date.seconds)}</p>
               </div>

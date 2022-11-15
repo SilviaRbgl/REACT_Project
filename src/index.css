@@ -334,7 +334,6 @@ p{
     max-height: 440px;
   }
   .card-movie img {
-    width: 100%;
     max-height: 205px;
     /* border-radius: 15px; */
   }
@@ -406,7 +405,6 @@ p{
     max-height: 640px;
   }
   .card-movie img {
-    width: 100%;
     max-height: 260px;
     /* border-radius: 15px; */
   }
@@ -476,6 +474,80 @@ p{
 /*DESKTOP STYLES */
 @media screen and (min-width: 1200px) {
   body{
-    font-size: 26px;
+    font-size: 18px;
+  }
+  .grid{
+    display: grid;
+    grid-template-columns: repeat(5, 2fr);
+    gap: 30px;
+  }
+  .video {
+    max-width: 620px;
+    max-height: 540px;
+  }
+  .card-movie img {
+    max-height: 270px;
+    /* border-radius: 15px; */
+  }
+  .container-main {
+    margin: 50px 140px;
+  }
+    /* .container img {
+    max-width: 100%;
+  } */
+  .container-detail {
+    margin: 50px 140px;
+  }
+  .container-detail img {
+    width: 17%;
+    margin: 0 15px 0 0;
+    float: left;
+  }
+  .container-profile{
+    margin: 50px 140px;
+  }
+  .container-comment input,textarea {
+    padding-bottom: 100px;
+    margin-bottom: 10px;
+    width: 95%;
+  }
+  .container-review{
+    padding: 15px;
+    margin-bottom: 10px;
+  }
+  .container-review p {
+    font-size: 1em;
+  }
+  .container-review h4 {
+    font-size: 1.2em;
+  }
+  .container-login {
+    margin: 70px 400px 70px 400px;
+    padding: 30px;
+    border-radius: 80px;
+  }
+  .nav {
+    padding: 25px;
+  }
+  .nav-item{
+    width: calc(var(--nav-size) * 1.6);
+  }
+  .icon-button{
+    width: 33%;
+    height: 90%;
+    padding: 6px;
+  }
+  .dropdown{
+    top: 75px;
+    width: 210px;
+    padding: 1rem;
+    transform: translateX(-48%);
+  }
+  .dropdown-item{
+    height: 20px;
+  }
+  .button {
+    padding: 8px 10px;
+    font-size: 16px;
   }
 }
