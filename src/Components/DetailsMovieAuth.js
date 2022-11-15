@@ -13,6 +13,7 @@ import {
   doc,
 } from "firebase/firestore";
 import { async } from "@firebase/util";
+import Reviews from "./Reviews";
 
 function DetailsMovieAuth() {
   const { user } = useContext(AuthContext);
@@ -87,13 +88,12 @@ function DetailsMovieAuth() {
     <div>
       <div className="star-rating">
         <p className="p-uppercase">Your rating:</p>
-        {[...Array(5)].map((index) => {
+        {[...Array(5)].map((index, i) => {
           index += 1;
           return (
-            <>
+            <React.Fragment key={i}>
               <button
                 type="button"
-                key={index}
                 className={index <= (hover || rating) ? "on" : "off"}
                 onClick={() => setRating(index)}
                 onMouseEnter={() => setHover(index)}
@@ -101,7 +101,7 @@ function DetailsMovieAuth() {
               >
                 <span className="star">&#9733;</span>
               </button>
-            </>
+            </React.Fragment>
           );
         })}
       </div>
@@ -118,7 +118,7 @@ function DetailsMovieAuth() {
         />
         <label htmlFor="message"></label>
         <br></br>
-        <button className="Button" type="submit" onClick={handleSubmit}>
+        <button className="button" type="submit" onClick={handleSubmit}>
           Submit review
         </button>
       </div>
@@ -134,6 +134,7 @@ function DetailsMovieAuth() {
               </div>
             );
           })}
+          <Reviews/>
       </div>
     </div>
   );

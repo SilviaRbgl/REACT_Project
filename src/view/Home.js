@@ -28,7 +28,7 @@ function Home() {
       <p>
         moviestoreview is the world's largest site for movie recommendations. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
       </p>
-      <button className="Button" onClick={goSearch}>
+      <button className="button" onClick={goSearch}>
         <FaSearch />  SEARCH MOVIES
       </button>
     </div>

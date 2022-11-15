@@ -49,10 +49,6 @@ function Movies() {
     return filteredMovies;
   };
 
-  // const handlePageChange = (e, p) => {
-  //   setCurrentPage(p);
-  // };
-
   return (
     <div className="Container">
       <SearchBar getInput={getInput} />
@@ -62,8 +58,8 @@ function Movies() {
         })}
       </div>
       <div className="pagination">
-        <button className="Button">Prev</button>
-        <button className="Button">Next</button>
+        <button className="button">Prev</button>
+        <button className="button">Next</button>
       </div>
     </div>
   );

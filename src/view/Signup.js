@@ -47,7 +47,7 @@ function Signup() {
       <label htmlFor="password"></label>
       <input type="password" placeholder="Enter password" name="psw" value={password} onChange={handlePasswordChange} required />
 
-      <button className="Button" onClick={handleSignup}>CREATE ACCOUNT</button>
+      <button className="button" onClick={handleSignup}>CREATE ACCOUNT</button>
     </div>
   );
 }

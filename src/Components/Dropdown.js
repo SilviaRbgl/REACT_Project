@@ -5,7 +5,7 @@ import { AuthContext } from "../Context/AuthContext";
 function Dropdown() {
   const { user, logOut, handleDropdown } = useContext(AuthContext);
 
-  function DropdownItem({page, logout, children}) {
+  function DropdownItem({page, logout, children, hide}) {
     // console.log('logout dropdown :>> ', page);
     const goTo= useNavigate()
     const test = (e)=> {
@@ -22,7 +22,7 @@ function Dropdown() {
       
     }
     return (
-      <NavLink className="dropdown-item"  onClick={(e)=>test(e)} >
+      <NavLink className={`dropdown-item ${hide}`} onClick={(e)=>test(e)} >
         {children}
       
       </NavLink>
@@ -36,7 +36,7 @@ function Dropdown() {
       {user ? (
         <DropdownItem page="/profile">My Profile</DropdownItem>
       ) : (
-        <DropdownItem className="item-hide" page="/profile">My Profile</DropdownItem>
+        <DropdownItem className="item-hide" hide="item-hide"  page="/profile">My Profile</DropdownItem>
       )}
       {/* <DropdownItem page="/profile">My Profile</DropdownItem> */}
       {user ? (

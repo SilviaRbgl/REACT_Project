@@ -40,17 +40,16 @@ function Login() {
       <label htmlFor="password"></label>
       <input type="password" placeholder="Enter password" name="psw" value={password} onChange={handlePasswordChange} required />
 
-        <button className="Button" onClick={handleLogin}>
+        <button className="button" onClick={handleLogin}>
           LOG IN
         </button>
         <br></br>     
         <input 
         type="checkbox" 
-        // checked="checked" 
         name="remember" />Remeber me<br></br>
       
         <p>Don't have an account?</p>
-      <button className="Button" onClick={goSignup}>
+      <button className="button" onClick={goSignup}>
         SIGN UP HERE
       </button>
     </div>

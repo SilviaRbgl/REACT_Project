@@ -67,7 +67,7 @@ function DetailsMovie() {
       { user ?  (
         <DetailsMovieAuth />
       ) : (
-        <button className="Button" onClick={goLogin}>
+        <button className="button" onClick={goLogin}>
         RATE & REVIEW THIS MOVIE
       </button>
       )

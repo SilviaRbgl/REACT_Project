@@ -62,7 +62,7 @@ body {
   font-family: Quicksand;
   /*color: #6B8758; */
 }
-.Button {
+.button {
   background: var(--secondary);
   border: none;
   color: var(--fourth);
@@ -75,7 +75,7 @@ body {
   text-decoration: none;
   font-size: 16px; */
 }
-.Button:hover{
+.button:hover{
   /* color: var(--fourth); */
   background: var(--third);
 }
@@ -96,7 +96,10 @@ input::placeholder {
   color: var(--primary);
   text-transform: uppercase;
 }
-.Card-Single {
+input:focus {
+  background-color: #00c3ff2f;
+}
+.card-movie {
   margin: 7px;
   /* text-align: center; */
   /* border: 5px solid var(--third); */
@@ -105,12 +108,7 @@ input::placeholder {
   /* box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.6); */
   /* padding: 10px; */
 }
-.Card-Single img {
-  width: 100%;
-  max-height: 190px;
-  /* border-radius: 15px; */
-}
-.Card-Single button{
+.card-movie button{
   background: var(--primary);
 }
 .Card-Login {
@@ -168,12 +166,9 @@ input::placeholder {
   background-color: #F09F60;
 }
 .item-hide{
-  display: none !important;
+  display: none;
 }
-.video {
-  max-width: 320px;
-  max-height: 240px;
-}
+
 
 /* FONTS */
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
@@ -185,7 +180,6 @@ h1,h2,h3,h4 {
 /* p,a,li{
   color: 
 } */
-
 h1,h2{
   font-size: 1.6em;
   padding-bottom: 15px;
@@ -211,7 +205,16 @@ p{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 5 px;
-} 
+}
+.video {
+  max-width: 320px;
+  max-height: 240px;
+}
+.card-movie img {
+  width: 100%;
+  max-height: 190px;
+  /* border-radius: 15px; */
+}
 .NavBar {
   margin: 0;
   padding: 20px;
@@ -321,7 +324,20 @@ p{
 
 /* SMALL TABLES STYLES */
 @media screen and (min-width: 620px) {
-
+  .grid{
+    display: grid;
+    grid-template-columns: repeat(3, 2fr);
+    gap: 10px;
+  }
+  .video {
+    max-width: 520px;
+    max-height: 440px;
+  }
+  .card-movie img {
+    width: 100%;
+    max-height: 230px;
+    /* border-radius: 15px; */
+  }
 }
 
 /*LARGE TABLETS & LAPTOPS STYLES */

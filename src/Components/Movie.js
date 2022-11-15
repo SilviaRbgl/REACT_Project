@@ -10,11 +10,11 @@ function Movie({ movie }) {
   };
 
   return (
-    <div className="Card-Single">
+    <div className="card-movie">
       <img src={movie.image} alt="poster of the movie" />
       <p>{movie.title}</p>
       {/* <Link to={`${movie.title}`}>{movie.title}</Link> */}
-      <button className="Button" onClick={goMore}>
+      <button className="button" onClick={goMore}>
         MORE <FaForward />
       </button>
     </div>

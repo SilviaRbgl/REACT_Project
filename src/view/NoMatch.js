@@ -21,11 +21,11 @@ function NoMatch() {
       ></iframe> */}
       <video autoPlay="autoPlay" loop="loop" playsInline className="video" src={nomatchvideo} type="video/mp4" />
       {/* <Icon src= {FaBackward} ></Icon> */}
-      <button className="Button" onClick={goSearch}>
+      <button className="button" onClick={goSearch}>
          BACK TO SEARCH MOVIES 
       </button>
       <br></br>
-      <button className="Button" onClick={goSearch}>
+      <button className="button" onClick={goSearch}>
          <FaBackward />
       </button>
       
