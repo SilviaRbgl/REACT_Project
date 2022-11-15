@@ -44,7 +44,7 @@ function DetailsMovie() {
   }, []);
 
   return (
-    <div className="Container-Detail">
+    <div className="container-detail">
       <h3>{singleMovie.fullTitle}</h3>
       <p className="p-uppercase">Directed by:</p><p>{singleMovie.directors}</p>
 

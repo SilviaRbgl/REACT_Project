@@ -9,7 +9,7 @@ function NavBar(props) {
   const { user, setUser, logOut } = useContext(AuthContext);
 
   return (
-    <nav className="NavBar">
+    <nav className="nav">
       <ul>
         {props.children}
       </ul>

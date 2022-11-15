@@ -106,7 +106,7 @@ function DetailsMovieAuth() {
         })}
       </div>
 
-      <div className="Container-Comment" action="">
+      <div className="container-comment" action="">
         <p className="p-uppercase">Review this movie:</p>
         <input
           type="text"

@@ -50,7 +50,7 @@ function Movies() {
   };
 
   return (
-    <div className="Container">
+    <div className="container-main">
       <SearchBar getInput={getInput} />
       <div className="grid">
         {filterMovies().map((movie, index) => {

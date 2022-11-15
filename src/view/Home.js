@@ -15,7 +15,7 @@ function Home() {
   console.log('user :>> ', user);
 
   return (
-    <div className="Container">
+    <div className="container-main">
       <h1>Welcome to moviestoreview</h1>
       <video autoPlay="autoPlay" loop="loop" playsInline className="video" src={countdown} type="video/mp4" />
       {/* <img src={movieIcon} alt="logo" /> */}

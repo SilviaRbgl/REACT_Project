@@ -6,7 +6,7 @@ function ProfileUser() {
 
 
   return (
-    <div className="Container-Profile">
+    <div className="container-profile">
        <h3>Hello {user.displayName}</h3>
        <p>Your username: {user.displayName}</p>
        
