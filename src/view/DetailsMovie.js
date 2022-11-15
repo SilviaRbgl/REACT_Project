@@ -46,23 +46,23 @@ function DetailsMovie() {
   return (
     <div className="Container-Detail">
       <h3>{singleMovie.fullTitle}</h3>
-      <p>Directed by: {singleMovie.directors}</p>
+      <p className="p-uppercase">Directed by:</p><p>{singleMovie.directors}</p>
 
-      <p>Top cast: {singleMovie.stars}</p>
+      <p className="p-uppercase">Top cast:</p><p>{singleMovie.stars}</p>
       {/* {singleMovie.starList?.map((actor) => {
         return <p>{actor.name}</p>
       })} */}
 
       <div className="">
-        <p>
+        <p className="p-uppercase">
           <img src={singleMovie.image} alt="poster of the movie" />
-          Plot summary: {singleMovie.plot}
+          Plot summary:</p><p> {singleMovie.plot}
         </p>
       </div>
 
-      <p>Genre: {singleMovie.genres}</p>
-      <p>Duration: {singleMovie.runtimeStr}</p>
-      <p>User rating: {singleMovie.imDbRating}</p>
+      <p className="p-uppercase">Genre:</p><p>{singleMovie.genres}</p>
+      <p className="p-uppercase">Duration:</p><p>{singleMovie.runtimeStr}</p>
+      <p className="p-uppercase">User rating:</p><p>{singleMovie.imDbRating}</p>
 
       { user ?  (
         <DetailsMovieAuth />

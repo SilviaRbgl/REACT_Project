@@ -86,7 +86,7 @@ function DetailsMovieAuth() {
   return (
     <div>
       <div className="star-rating">
-        <p>Your rating: </p>
+        <p className="p-uppercase">Your rating:</p>
         {[...Array(5)].map((index) => {
           index += 1;
           return (
@@ -107,7 +107,7 @@ function DetailsMovieAuth() {
       </div>
 
       <div className="Container-Comment" action="">
-        <p>Review this movie:</p>
+        <p className="p-uppercase">Review this movie:</p>
         <input
           type="text"
           value={review}
@@ -122,7 +122,7 @@ function DetailsMovieAuth() {
           Submit review
         </button>
       </div>
-      <p>Users reviews:</p>
+      <p className="p-uppercase">Users reviews:</p>
       <div>
         {reviewsMsgs &&
           reviewsMsgs.map((msg, index) => {

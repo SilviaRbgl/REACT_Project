@@ -6,7 +6,7 @@ function SearchBar({getInput}) {
     <div>
         <input
         type="text"
-        placeholder='Search movie'
+        placeholder="Search movie"
         onChange={(e)=> getInput(e.target.value)}
       />
     </div>
