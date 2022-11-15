@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import KeyboardArrowRightRoundedIcon from "@mui/icons-material/KeyboardArrowRightRounded";
+import { FaForward } from "react-icons/fa";
 
 function Movie({ movie }) {
   const clickMore = useNavigate();
@@ -15,8 +15,7 @@ function Movie({ movie }) {
       <p>{movie.title}</p>
       {/* <Link to={`${movie.title}`}>{movie.title}</Link> */}
       <button className="Button" onClick={goMore}>
-        MORE
-        {/* <span class="material-symbols-outlined">keyboard_double_arrow_right</span> */}
+        MORE <FaForward />
       </button>
     </div>
   );

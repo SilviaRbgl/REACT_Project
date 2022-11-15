@@ -166,7 +166,14 @@ input::placeholder {
 .dropdown-item:active {
   background-color: #F09F60;
 }
-
+.item-hide{
+  display: none !important;
+}
+.video {
+  max-width: 320px;
+  max-height: 240px;
+  
+}
 
 /* FONTS */
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
@@ -297,6 +304,13 @@ p{
 }
 .container-review h4 {
   font-size: 1.2em;
+}
+.container-nomatch {
+  margin: 50px 15px;
+  text-align: center;
+}
+.container-nomatch h3, video {
+  margin-bottom: 30px;
 }
 
 /* SMALL TABLES STYLES */

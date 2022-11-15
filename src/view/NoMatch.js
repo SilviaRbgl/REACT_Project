@@ -1,18 +1,35 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import React from "react";
-import nomatchvideo from "../images/nomatchvideo.mov";
+import nomatchvideo from "../images/nomatchvideo.mp4";
+import { FaBackward } from "react-icons/fa";
 
 function NoMatch() {
+
+  const clickSearch = useNavigate();
+  const goSearch = () => {
+    clickSearch("/movies");
+  };
+
   return (
-    <div className="Container">
-      <p>Sorry, no results found</p>
-      <iframe
+    <div className="container-nomatch">
+      <h3>Sorry, no results found</h3>
+      {/* <iframe
         src="https://giphy.com/embed/jcxtvm2bsZDH2"
         width="320"
         height="227"
         className="giphy-embed"
-      ></iframe>
-      {/* <video src={nomatchvideo} width="600" height="300" autoplay="true" /> */}
+      ></iframe> */}
+      <video autoPlay="autoPlay" loop="loop" playsInline className="video" src={nomatchvideo} type="video/mp4" />
+      {/* <Icon src= {FaBackward} ></Icon> */}
+      <button className="Button" onClick={goSearch}>
+         BACK TO SEARCH MOVIES 
+      </button>
+      <br></br>
+      <button className="Button" onClick={goSearch}>
+         <FaBackward />
+      </button>
+      
+
     </div>
   );
 }

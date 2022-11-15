@@ -33,7 +33,12 @@ function Dropdown() {
     <div className="dropdown">
       <DropdownItem page="/"  >Home</DropdownItem>
       <DropdownItem page="/movies" >Search movies</DropdownItem>
-      <DropdownItem page="/profile">My Profile</DropdownItem>
+      {user ? (
+        <DropdownItem page="/profile">My Profile</DropdownItem>
+      ) : (
+        <DropdownItem className="item-hide" page="/profile">My Profile</DropdownItem>
+      )}
+      {/* <DropdownItem page="/profile">My Profile</DropdownItem> */}
       {user ? (
         <DropdownItem logout={logOut}>Log out</DropdownItem>
       ) : (

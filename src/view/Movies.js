@@ -7,10 +7,6 @@ function Movies() {
   const [movies, setMovies] = useState([]);
   const [error, setError] = useState(null);
   const [search, setSearch] = useState("");
-  const [pages, setPages] = useState("")
-  const [nextPage, setNextPage] = useState("");
-  const [currentPage, setCurrentPage] = useState("");
-
 
   const fetchMovies = async () => {
     try {
@@ -18,19 +14,18 @@ function Movies() {
       // const response = await fetch();
       // const result = await response.json();
       // setMovies(result.items);
-      const paginatedFilms = []
-data.items.map((res, index)=> {
-  if(10 > index <= 20) { // create variables for each number, modifie those values with onclick, and put them in the useEffect as dependecy
-    paginatedFilms.push(res)
-  }
-  console.log('paginatedFilms :>> ', paginatedFilms);
-})
-setMovies(paginatedFilms)
+      const paginatedMovies = [];
+      data.items.map((res, index) => {
+        if (10 > index <= 20) {
+          // create variables for each number, modifie those values with onclick, and put them in the useEffect as dependecy
+          paginatedMovies.push(res);
+        }
+        // console.log("paginatedMovies:>> ", paginatedMovies);
+      });
+      setMovies(paginatedMovies);
       // setMovies(data.items); // use this line if you want to preserve the "fetch" behaviour, but with local data
       console.log("movies from data>>>", data.items);
       // console.log("movies>>>", result.items);
-      setPages(data.items)
-      console.log("pages length", data.items.length);
     } catch (error) {
       console.log(error);
     }
@@ -38,7 +33,6 @@ setMovies(paginatedFilms)
 
   useEffect(() => {
     fetchMovies();
-    setPages();
   }, []);
 
   const getInput = (input) => {
@@ -59,7 +53,6 @@ setMovies(paginatedFilms)
   //   setCurrentPage(p);
   // };
 
-
   return (
     <div className="Container">
       <SearchBar getInput={getInput} />
@@ -69,8 +62,8 @@ setMovies(paginatedFilms)
         })}
       </div>
       <div className="pagination">
-      <button className="Button">Prev</button>
-      <button className="Button">Next</button>
+        <button className="Button">Prev</button>
+        <button className="Button">Next</button>
       </div>
     </div>
   );
