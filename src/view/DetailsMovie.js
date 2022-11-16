@@ -46,19 +46,14 @@ function DetailsMovie() {
   return (
     <div className="container-detail">
       <h3>{singleMovie.fullTitle}</h3>
+      <img src={singleMovie.image} alt="poster of the movie" />
       <p className="p-uppercase">Directed by:</p><p>{singleMovie.directors}</p>
 
       <p className="p-uppercase">Top cast:</p><p>{singleMovie.stars}</p>
       {/* {singleMovie.starList?.map((actor) => {
         return <p>{actor.name}</p>
       })} */}
-
-      <div className="">
-        <p className="p-uppercase">
-          <img src={singleMovie.image} alt="poster of the movie" />
-          Plot summary:</p><p> {singleMovie.plot}
-        </p>
-      </div>
+      <p className="p-uppercase">Plot summary:</p><p> {singleMovie.plot}</p>
 
       <p className="p-uppercase">Genre:</p><p>{singleMovie.genres}</p>
       <p className="p-uppercase">Duration:</p><p>{singleMovie.runtimeStr}</p>
