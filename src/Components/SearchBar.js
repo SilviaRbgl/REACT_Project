@@ -1,16 +1,15 @@
-import React from 'react'
+import React from "react";
 
-function SearchBar({getInput}) {
-
+function SearchBar({ getInput }) {
   return (
     <div>
-        <input
+      <input
         type="text"
         placeholder="Search movie"
-        onChange={(e)=> getInput(e.target.value)}
+        onChange={(e) => getInput(e.target.value)}
       />
     </div>
-  )
+  );
 }
 
-export default SearchBar
+export default SearchBar;

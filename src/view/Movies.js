@@ -4,7 +4,6 @@ import Movie from "../Components/Movie";
 import Pagination from "../Components/Pagination";
 import SearchBar from "../Components/SearchBar";
 
-
 function Movies() {
   const [movies, setMovies] = useState([]);
   const [error, setError] = useState(null);
@@ -22,7 +21,7 @@ function Movies() {
       //     // create variables for each number, modifie those values with onclick, and put them in the useEffect as dependecy
       //     paginatedMovies.push(res);
       //   }
-        // console.log("paginatedMovies:>> ", paginatedMovies);
+      // console.log("paginatedMovies:>> ", paginatedMovies);
       // });
       // setMovies(paginatedMovies);
       // setMovies(data.items); // use this line if you want to preserve the "fetch" behaviour, but with local data
@@ -45,38 +44,40 @@ function Movies() {
   };
 
   const filterMovies = () => {
-    const filteredMovies = movies.filter((movie) => {
+    // console.log("movies", movies);
+    const filteredMovies = data.items.filter((movie) => {
       return movie.title.toLowerCase().includes(search.toLowerCase());
     });
+
+    console.log("filteredMovies>>>", filteredMovies);
+
     return filteredMovies;
   };
-
 
   return (
     <div className="container-main">
       <SearchBar getInput={getInput} />
-      <>
+      {/* <>
         {filterMovies().map((movie, index) => {
           return <Movie key={movie.id} movie={movie} search={search} />;
         })}
+      </> */}
+
+      <>
+        {data.items.length > 0 ? (
+          <>
+            <Pagination
+              data={filterMovies()}
+              RenderComponent={Movie}
+              title="Movies"
+              pageLimit={5}
+              dataLimit={10}
+            />
+          </>
+        ) : (
+          <h1>No Posts to display</h1>
+        )}
       </>
-      
-      <div className="grid">
-      {data.items.length > 0 ? (
-        <>
-          <Pagination
-            data={data.items}
-            RenderComponent={Movie}
-            title="Movies"
-            pageLimit={5}
-            dataLimit={10}
-          />
-        </>
-      ) : (
-       <h1>No Posts to display</h1>
-      )}
-      </div>
-      
     </div>
   );
 }

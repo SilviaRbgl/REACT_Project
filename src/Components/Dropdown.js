@@ -1,21 +1,24 @@
 import React, { useContext } from "react";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Context/AuthContext";
 
 function Dropdown() {
   const { user, logOut, handleDropdown } = useContext(AuthContext);
-
+  const location = useLocation();
+  console.log("location :>> ", location);
   function DropdownItem({ page, logout, children, hide }) {
     // console.log('logout dropdown :>> ', page);
     const goTo = useNavigate();
+    const location = useLocation();
+
     const test = (e) => {
       e.preventDefault();
       if (!logout) {
-        console.log('page :>> ', page);
+        console.log("page :>> ", page);
         handleDropdown();
-        goTo(`${page}`)
+        goTo(`${page}`);
       } else {
-        console.log('page :>> ', page);
+        console.log("page :>> ", page);
         handleDropdown();
         logout();
         goTo(`${page}`);
@@ -31,7 +34,7 @@ function Dropdown() {
 
   return (
     <div className="dropdown">
-      <DropdownItem page="/">Home</DropdownItem>
+      {location.pathname !== "/" && <DropdownItem page="/">Home</DropdownItem>}
       <DropdownItem page="/movies">Search movies</DropdownItem>
       {user ? (
         <DropdownItem page="/profile">My Profile</DropdownItem>
