@@ -54,8 +54,8 @@ function Login() {
         LOG IN
       </button>
       <br></br>
-      <input type="checkbox" name="remember" />
-      Remeber me<br></br>
+      {/* <input type="checkbox" name="remember" />
+      Remeber me<br></br> */}
       <p>Don't have an account?</p>
       <button className="button" onClick={goSignup}>
         SIGN UP HERE

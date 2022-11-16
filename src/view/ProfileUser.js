@@ -1,24 +1,30 @@
-import React, { useContext } from 'react'
-import { AuthContext } from '../Context/AuthContext';
+import React, { useContext } from "react";
+import { AuthContext } from "../Context/AuthContext";
+import { MdEdit, MdAlternateEmail, MdDelete } from "react-icons/md";
+import { HiUser } from "react-icons/hi";
+import { FiCheck } from "react-icons/fi";
+import { RiLockPasswordFill } from "react-icons/ri";
 
 function ProfileUser() {
-  const { user } = useContext(AuthContext);
-
+  const { user, updateProfile } = useContext(AuthContext);
 
   return (
     <div className="container-profile">
-       <h3>Hello {user.displayName}</h3>
-       <p>Your username: {user.displayName}</p>
-       
-       <p>Your email: {user.email}</p>
-       <p>Your password: {user.password}</p>
-
-       <p>Change your username:</p>
-       <input type="text" placeholder="write here"></input>
-       
-
+      <h3>Contact information</h3>
+      <p ><HiUser /> Your username: {user.displayName}</p>
+      <p><MdEdit /> Change username:</p>
+      <input type="text" placeholder="write here"></input>
+      <button className="button" onClick={updateProfile}>
+        <FiCheck />
+      </button>
+      <p><MdAlternateEmail /> Your email: {user.email}</p>
+      <p><RiLockPasswordFill /> Your password: {user.password}</p>
+      <p>Delete account?</p>
+      <button className="button">
+        <MdDelete />
+      </button>
     </div>
-  )
+  );
 }
 
-export default ProfileUser
+export default ProfileUser;

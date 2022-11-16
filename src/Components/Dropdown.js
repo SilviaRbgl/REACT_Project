@@ -5,38 +5,38 @@ import { AuthContext } from "../Context/AuthContext";
 function Dropdown() {
   const { user, logOut, handleDropdown } = useContext(AuthContext);
 
-  function DropdownItem({page, logout, children, hide}) {
+  function DropdownItem({ page, logout, children, hide }) {
     // console.log('logout dropdown :>> ', page);
-    const goTo= useNavigate()
-    const test = (e)=> {
-      e.preventDefault()
-      if(!logout) {
-        handleDropdown()
-        goTo(page)
+    const goTo = useNavigate();
+    const test = (e) => {
+      e.preventDefault();
+      if (!logout) {
+        handleDropdown();
+        goTo(page);
       } else {
-        handleDropdown()
-        logout()
-        goTo(page)
+        handleDropdown();
+        logout();
+        goTo(page);
       }
-      
-      
-    }
+    };
+
     return (
-      <NavLink className={`dropdown-item ${hide}`} onClick={(e)=>test(e)} >
+      <NavLink className={`dropdown-item ${hide}`} onClick={(e) => test(e)}>
         {children}
-      
       </NavLink>
     );
   }
 
   return (
     <div className="dropdown">
-      <DropdownItem page="/"  >Home</DropdownItem>
-      <DropdownItem page="/movies" >Search movies</DropdownItem>
+      <DropdownItem page="/">Home</DropdownItem>
+      <DropdownItem page="/movies">Search movies</DropdownItem>
       {user ? (
         <DropdownItem page="/profile">My Profile</DropdownItem>
       ) : (
-        <DropdownItem className="item-hide" hide="item-hide"  page="/profile">My Profile</DropdownItem>
+        <DropdownItem hide="item-hide" page="/profile">
+          My Profile
+        </DropdownItem>
       )}
       {/* <DropdownItem page="/profile">My Profile</DropdownItem> */}
       {user ? (

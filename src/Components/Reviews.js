@@ -31,7 +31,7 @@ function Reviews() {
             <div key={index} className="container-review">
               <p>{review.username} wrote:</p>
               {/* <h4>"{review.content}"</h4> */}
-              <h4>               
+              <h4>             
                 {showMore
                   ? review.content
                   : `${review.content.substring(0, 300)}`}

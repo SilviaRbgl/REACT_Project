@@ -229,12 +229,12 @@ p{
 
 
 /* MOBILE STYLES */
-/* .grid{
-  display: grid;
+.grid{
+  /* display: grid;
   grid-template-columns: repeat(1, 1fr);
   justify-items: center;
-  gap: 5 px;
-} */
+  gap: 5 px; */
+}
 .video {
   max-width: 320px;
   max-height: 240px;
