@@ -61,7 +61,7 @@ function Movies() {
         })}
       </>
       
-      <>
+      <div className="grid">
       {data.items.length > 0 ? (
         <>
           <Pagination
@@ -75,7 +75,7 @@ function Movies() {
       ) : (
        <h1>No Posts to display</h1>
       )}
-      </>
+      </div>
       
     </div>
   );

@@ -229,12 +229,12 @@ p{
 
 
 /* MOBILE STYLES */
-.grid{
-  /* display: grid;
-  grid-template-columns: repeat(1, 1fr);
+/* .grid{
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
   justify-items: center;
-  gap: 5 px; */
-}
+  gap: 5px;
+} */
 .video {
   max-width: 320px;
   max-height: 240px;
@@ -289,13 +289,6 @@ p{
 .icon-button:hover{
   filter: brightness(1.2);
 }
-/* .Avatar{
-  vertical-align: middle;
-  float: right;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-} */
 .container-main {
   margin: 15px 30px;
   text-align: center;
@@ -374,9 +367,7 @@ p{
 }
 .dropdown-item{
   height: 15px;
-  display: flex;
-  align-items: center;
-  transition: background var(--speed);
+  display:flex; /* si quito DISPLAY:FLEX se aplica el "DISPLAY:NONE" y desaparece "MY LOGIN" */
   padding: 0.6rem;
 }
 

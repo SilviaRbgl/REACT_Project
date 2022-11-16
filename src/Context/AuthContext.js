@@ -83,6 +83,20 @@ export const AuthContextProvider = (props) => {
       .catch((error) => {});
   };
 
+  const deleteUser = () => {
+    const auth = getAuth();
+    const user = auth.currentUser;
+
+    deleteUser(user)
+      .then(() => {
+        // User deleted.
+      })
+      .catch((error) => {
+        // An error ocurred
+        // ...
+      });
+  };
+
   const handleDropdown = () => {
     setOpen(!open);
   };

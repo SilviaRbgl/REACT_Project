@@ -6,7 +6,7 @@ import { FiCheck } from "react-icons/fi";
 import { RiLockPasswordFill } from "react-icons/ri";
 
 function ProfileUser() {
-  const { user, updateProfile } = useContext(AuthContext);
+  const { user, updateProfile, deleteUser  } = useContext(AuthContext);
 
   return (
     <div className="container-profile">

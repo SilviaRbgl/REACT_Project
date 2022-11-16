@@ -1,11 +1,12 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { FaChevronDown } from "react-icons/fa";
 import { FaChevronUp } from "react-icons/fa";
+import ApiReview from "./ApiReview";
 
 function Reviews() {
   const [reviews, setReviews] = useState([]);
   const [error, setError] = useState(null);
-  const [showMore, setShowMore] = useState(false);
+  // const [showMore, setShowMore] = useState(false);
 
   const fetchReviews = async () => {
     try {
@@ -29,20 +30,7 @@ function Reviews() {
         reviews.items?.slice(0, 3).map((review, index) => {
           return (
             <div key={index} className="container-review">
-              <p>{review.username} wrote:</p>
-              {/* <h4>"{review.content}"</h4> */}
-              <h4>             
-                {showMore
-                  ? review.content
-                  : `${review.content.substring(0, 300)}`}
-                <button
-                  className="button"
-                  onClick={() => setShowMore(!showMore)}
-                >
-                  {showMore ? <FaChevronUp /> : <FaChevronDown />}
-                </button>
-              </h4>
-              <p>{review.date}</p>
+              <ApiReview review={review}/>
             </div>
           );
         })}

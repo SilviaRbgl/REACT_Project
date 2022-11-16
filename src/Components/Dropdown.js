@@ -11,12 +11,14 @@ function Dropdown() {
     const test = (e) => {
       e.preventDefault();
       if (!logout) {
+        console.log('page :>> ', page);
         handleDropdown();
-        goTo(page);
+        goTo(`${page}`)
       } else {
+        console.log('page :>> ', page);
         handleDropdown();
         logout();
-        goTo(page);
+        goTo(`${page}`);
       }
     };
 
