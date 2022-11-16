@@ -97,6 +97,10 @@ export const AuthContextProvider = (props) => {
       });
   };
 
+  const handleDeleteUser = () => {
+    
+  } 
+
   const handleDropdown = () => {
     setOpen(!open);
   };
@@ -116,6 +120,7 @@ export const AuthContextProvider = (props) => {
         handleDropdown,
         open,
         updateProfile,
+        handleDeleteUser,
       }}
     >
       {props.children}
