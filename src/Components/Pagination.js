@@ -39,11 +39,11 @@ function Pagination({ data, RenderComponent, title, pageLimit, dataLimit }) {
   return (
     <>
       {/* show the posts, 10 posts at a time */}
-      <>
+      <div className="grid">
         {getPaginatedData().map((movie, idx) => (
           <RenderComponent key={idx} movie={movie} />
         ))}
-      </>
+      </div>
 
       {/* show the pagiantion
         it consists of next and previous buttons

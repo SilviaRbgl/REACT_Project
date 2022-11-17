@@ -1,14 +1,17 @@
 import React, { useContext } from "react";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate, useLocation } from "react-router-dom";
 import { AuthContext } from "../Context/AuthContext";
 
 function Dropdown() {
   const { user, logOut, handleDropdown } = useContext(AuthContext);
+  const location = useLocation(); // NO ENTIENDO EL USO DE USELOCATION
 
   function DropdownItem({ page, logout, children, hide }) {
     // console.log('logout dropdown :>> ', page);
     const goTo = useNavigate();
-    const test = (e) => {
+    const location = useLocation();
+
+    const handleDropdownItems = (e) => {
       e.preventDefault();
       if (!logout) {
         console.log('page :>> ', page);
@@ -23,7 +26,7 @@ function Dropdown() {
     };
 
     return (
-      <NavLink className={`dropdown-item ${hide}`} onClick={(e) => test(e)}>
+      <NavLink className={`dropdown-item ${hide}`} onClick={(e) => handleDropdownItems(e)}>
         {children}
       </NavLink>
     );
@@ -32,7 +35,8 @@ function Dropdown() {
   return (
     <div className="dropdown">
       <DropdownItem page="/">Home</DropdownItem>
-      <DropdownItem page="/movies">Search movies</DropdownItem>
+      {location.pathname !== "/" && <DropdownItem page="/movies">Search movies</DropdownItem>}
+      {/* <DropdownItem page="/movies">Search movies</DropdownItem> */}
       {user ? (
         <DropdownItem page="/profile">My Profile</DropdownItem>
       ) : (

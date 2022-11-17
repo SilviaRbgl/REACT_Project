@@ -26,7 +26,7 @@ function Movies() {
       // });
       // setMovies(paginatedMovies);
       // setMovies(data.items); // use this line if you want to preserve the "fetch" behaviour, but with local data
-      console.log("movies from data>>>", data.items);
+      // console.log("movies from data>>>", data.items);
       // console.log("movies>>>", result.items);
     } catch (error) {
       console.log(error);
@@ -55,13 +55,13 @@ function Movies() {
   return (
     <div className="container-main">
       <SearchBar getInput={getInput} />
-      <>
+      {/* <>
         {filterMovies().map((movie, index) => {
           return <Movie key={movie.id} movie={movie} search={search} />;
         })}
-      </>
+      </> */}
       
-      <div className="grid">
+      <>
       {data.items.length > 0 ? (
         <>
           <Pagination
@@ -69,13 +69,13 @@ function Movies() {
             RenderComponent={Movie}
             title="Movies"
             pageLimit={5}
-            dataLimit={10}
+            dataLimit={24}
           />
         </>
       ) : (
        <h1>No Posts to display</h1>
       )}
-      </div>
+      </>
       
     </div>
   );

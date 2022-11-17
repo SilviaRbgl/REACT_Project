@@ -6,7 +6,7 @@ import { FiCheck } from "react-icons/fi";
 import { RiLockPasswordFill } from "react-icons/ri";
 
 function ProfileUser() {
-  const { user, updateProfile, handleDeleteUser } = useContext(AuthContext);
+  const { user, updateProfile } = useContext(AuthContext);
 
   return (
     <div className="container-profile">
@@ -20,7 +20,7 @@ function ProfileUser() {
       <p><MdAlternateEmail /> Your email: {user.email}</p>
       <p><RiLockPasswordFill /> Your password: {user.password}</p>
       <p>Delete account?</p>
-      <button className="button" onClick={handleDeleteUser}>
+      <button className="button">
         <MdDelete />
       </button>
       
