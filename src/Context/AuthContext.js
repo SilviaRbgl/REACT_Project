@@ -9,7 +9,7 @@ import {
   deleteUser,
 } from "firebase/auth";
 import { auth } from "../config";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export const AuthContext = createContext();
 
@@ -55,6 +55,7 @@ export const AuthContextProvider = (props) => {
       console.log("userLogIn", userLogIn);
       setUser(userLogIn);
       redirectTo("/movies");
+      // redirectTo(<Link to="/movies" replace></Link>)
     } catch (error) {
       const errorCode = error.code;
       const errorMessage = error.message;

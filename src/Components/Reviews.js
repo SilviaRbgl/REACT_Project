@@ -1,6 +1,7 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { FaChevronDown } from "react-icons/fa";
 import { FaChevronUp } from "react-icons/fa";
+import { useParams } from "react-router-dom";
 import ApiReview from "./ApiReview";
 
 function Reviews() {
@@ -8,9 +9,11 @@ function Reviews() {
   const [error, setError] = useState(null);
   // const [showMore, setShowMore] = useState(false);
 
+  const { id } = useParams();
+
   const fetchReviews = async () => {
     try {
-      const url = `https://imdb-api.com/en/API/Reviews/${process.env.REACT_APP_KEY}/tt1375666`;
+      const url = `https://imdb-api.com/en/API/Reviews/${process.env.REACT_APP_KEY1}/${id}`;
       const response = await fetch(url);
       const result = await response.json();
       setReviews(result);

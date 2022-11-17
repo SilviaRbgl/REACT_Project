@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { data2 } from "../API-data/response2";
-import { DetailsContext } from "../Context/DetailsContext";
+// import { DetailsContext } from "../Context/DetailsContext";
 import Reviews from "../Components/Reviews";
 import DetailsMovieAuth from "../Components/DetailsMovieAuth";
 import Movies from "./Movies";
@@ -9,10 +9,12 @@ import { AuthContext } from "../Context/AuthContext";
 
 function DetailsMovie() {
   // console.log(useParams());
+  const [singleMovie, setSingleMovie] = useState([]);
+  const [error, setError] = useState(null);
   const { id } = useParams();
 
   const { user } = useContext(AuthContext);
-  const { singleMovie, fetchSingleMovie } = useContext(DetailsContext);
+  // const { singleMovie, fetchSingleMovie } = useContext(DetailsContext);
 
 
   const clickLogin = useNavigate();
@@ -20,27 +22,24 @@ function DetailsMovie() {
     clickLogin("/login");
   };
 
-  // const [reviews, setReviews] = useState([]);
-  // const [error, setError] = useState(null);
+  const fetchSingleMovie = async () => {
+    try {
+      const url = `https://imdb-api.com/en/API/Title/${process.env.REACT_APP_KEY1}/${id}`;
+      const response = await fetch(url);
+      const result = await response.json();
+      setSingleMovie(result);
+      // setSingleMovie(data2); // use this line if you want to preserve the "fetch" behaviour, but with local data
+      console.log("single movies>>>", result);
+      // console.log("single movies>>>", result.id);
+    } catch (error) {
+      setError(error.message);
+      console.log(error);
+    }
+  };
 
-  // const fetchReviews = async () => {
-  //   try {
-  //     const url = `https://imdb-api.com/en/API/Reviews/${process.env.REACT_APP_KEY}/${id}`;
-  //     const response = await fetch(url);
-  //     const result = await response.json();
-  //     setReviews(result);
-  //     // setSingleMovie(data2); // use this line if you want to preserve the "fetch" behaviour, but with local data
-  //     // console.log("movies from data>>>", data3);
-  //     console.log("reviews>>>", result.items);
-  //     console.log(result);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
 
   useEffect(() => {
     fetchSingleMovie();
-    // fetchReviews();
   }, []);
 
   return (

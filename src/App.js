@@ -6,9 +6,7 @@ import Signup from "./view/Signup";
 import NavBar from "./Components/NavBar";
 import NoMatch from "./view/NoMatch";
 import DetailsMovie from "./view/DetailsMovie";
-// import DetailsMovieAuth from "./view/DetailsMovieAuth"
 import "./index.css";
-import { DetailsContextProvider } from "./Context/DetailsContext";
 import { AuthContextProvider } from "./Context/AuthContext";
 import { app, auth } from "./config";
 import NavBarItem from "./Components/NavBarItem";
@@ -26,7 +24,6 @@ function App() {
             <Dropdown></Dropdown>
           </NavBarItem>
         </NavBar>
-        <DetailsContextProvider>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="movies" element={<Movies />} />
@@ -43,7 +40,6 @@ function App() {
             />
             <Route path="*" element={<NoMatch />} />
           </Routes>
-        </DetailsContextProvider>
       </AuthContextProvider>
     </div>
   );
