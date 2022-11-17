@@ -14,7 +14,7 @@ function Home() {
 
   return (
     <div className="container-main">
-      <h1>Welcome to moviesTOreview</h1>
+      <h1>Welcome to moviesReview</h1>
       <video autoPlay="autoPlay" loop="loop" playsInline className="video" src={countdown} type="video/mp4" />
       <p>
         moviestoreview is the world's largest site for movie recommendations. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.

@@ -7,6 +7,7 @@ import NavBar from "./Components/NavBar";
 import NoMatch from "./view/NoMatch";
 import DetailsMovie from "./view/DetailsMovie";
 import "./index.css";
+import "./App.css"
 import { AuthContextProvider } from "./Context/AuthContext";
 import { app, auth } from "./config";
 import NavBarItem from "./Components/NavBarItem";

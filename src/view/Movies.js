@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { data } from "../API-data/response";
 import Movie from "../Components/Movie";
 import Pagination from "../Components/Pagination";
@@ -65,7 +65,7 @@ function Movies() {
             />
           </>
         ) : (
-          <h1>No Posts to display</h1>
+          <Link to="/nomatch" />
         )}
       </>
     </div>

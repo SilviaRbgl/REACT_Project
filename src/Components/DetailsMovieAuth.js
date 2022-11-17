@@ -15,7 +15,7 @@ import {
 import { async } from "@firebase/util";
 import Reviews from "./Reviews";
 
-function DetailsMovieAuth() {
+function DetailsMovieAuth({singleMovie}) {
   const { user } = useContext(AuthContext);
   const [reviewsMsgs, setReviewsMsgs] = useState([]);
   const [review, setReview] = useState("");
@@ -37,7 +37,22 @@ function DetailsMovieAuth() {
     //   console.log("error", error);
     // }
 
-    const q = query(collection(db, "Reviews"), orderBy("date"));
+    // const q = query(collection(db, "Reviews"), orderBy("date"));
+    
+    // onSnapshot(q, (querySnapshot) => {
+    //   const myMsgs = [];
+      
+    //   querySnapshot.forEach((doc) => {
+
+    //     myMsgs.push(doc.data());
+    //   });
+    //   setReviewsMsgs(myMsgs);
+    //   console.log("Reviews:", myMsgs);
+    // });
+
+//? intento de display de nuevos mensjaes por pelicula
+    const q = query(collection(db, "ReviewsByFilm",singleMovie.id, "review"), orderBy("date"));
+    // console.log('comentarios :>> ', q);
     
     onSnapshot(q, (querySnapshot) => {
       const myMsgs = [];
@@ -47,7 +62,7 @@ function DetailsMovieAuth() {
         myMsgs.push(doc.data());
       });
       setReviewsMsgs(myMsgs);
-      console.log("Reviews:", myMsgs);
+      console.log("ReviewsByFilm:", myMsgs);
     });
   };
 
@@ -68,7 +83,7 @@ function DetailsMovieAuth() {
       //   date: new Date(),
       //   author: user.email,
       // });//? to create a new document with a custom id (user email)
-      const docRef = await addDoc(collection(db, "Reviews"), {
+      const docRef = await addDoc(collection(db, "ReviewsByFilm", singleMovie.id, "review" ), {
         text: review,
         date: new Date(),
         author: user.email,

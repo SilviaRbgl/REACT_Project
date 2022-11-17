@@ -59,7 +59,7 @@ function DetailsMovie() {
       <p className="p-uppercase">User rating:</p><p>{singleMovie.imDbRating}</p>
 
       { user ?  (
-        <DetailsMovieAuth />
+        <DetailsMovieAuth singleMovie={singleMovie} />
       ) : (
         <button className="button" onClick={goLogin}>
         RATE & REVIEW THIS MOVIE
