@@ -1,13 +1,12 @@
 /* VARIABLES */
-:root{
-  --primary: #00B271;
-  --secondary: #F09F60;
-  --third: #00C2FF;
-  --fourth: #E5EEDE;
-  --fifth: #2F4858;
+:root {
+  --primary: #00b271;
+  --secondary: #f09f60;
+  --third: #00c2ff;
+  --fourth: #e5eede;
+  --fifth: #2f4858;
   --nav-size: 60px;
 }
-
 
 /* RESET */
 html, body, div, span, applet, object, iframe,
@@ -34,18 +33,22 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
 	border-collapse: collapse;

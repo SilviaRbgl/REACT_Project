@@ -37,7 +37,8 @@ function Movies() {
   };
 
   const filterMovies = () => {
-    const filteredMovies = movies.filter((movie) => {
+    // console.log("movies", movies);
+    const filteredMovies = data.items.filter((movie) => {
       return movie.title.toLowerCase().includes(search.toLowerCase());
     });
     // console.log('filteredMovies :>> ', filteredMovies);

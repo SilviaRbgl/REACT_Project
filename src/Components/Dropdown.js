@@ -5,7 +5,6 @@ import { AuthContext } from "../Context/AuthContext";
 function Dropdown() {
   const { user, logOut, handleDropdown } = useContext(AuthContext);
   const location = useLocation();
-
   function DropdownItem({ page, logout, children, hide }) {
     // console.log('logout dropdown :>> ', page);
     const goTo = useNavigate();
