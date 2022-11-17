@@ -15,50 +15,24 @@ import {
 import { async } from "@firebase/util";
 import Reviews from "./Reviews";
 
-function DetailsMovieAuth({singleMovie}) {
+function DetailsMovieAuth({ singleMovie }) {
   const { user } = useContext(AuthContext);
   const [reviewsMsgs, setReviewsMsgs] = useState([]);
   const [review, setReview] = useState("");
-
   const [rating, setRating] = useState(0);
   const [hover, setHover] = useState(0);
+  console.log("rating>", rating);
 
   const getReviews = async () => {
-    // try {
-    //   const querySnapshot = await getDocs(collection(db, "Reviews"));
-    //   const myMsgs = [];
-    //   querySnapshot.forEach((doc) => {
-    //     console.log(`${doc.id} => ${doc.data()}`);
-    //     myMsgs.push(doc.data());
-    //   });
-    //   console.log("myMsgs>", myMsgs);
-    //   setReviewsMsgs(myMsgs);
-    // } catch (error) {
-    //   console.log("error", error);
-    // }
+    const q = query(
+      collection(db, "ReviewsByFilm", singleMovie.id, "review"),
+      orderBy("date")
+    );
 
-    // const q = query(collection(db, "Reviews"), orderBy("date"));
-    
-    // onSnapshot(q, (querySnapshot) => {
-    //   const myMsgs = [];
-      
-    //   querySnapshot.forEach((doc) => {
-
-    //     myMsgs.push(doc.data());
-    //   });
-    //   setReviewsMsgs(myMsgs);
-    //   console.log("Reviews:", myMsgs);
-    // });
-
-//? intento de display de nuevos mensjaes por pelicula
-    const q = query(collection(db, "ReviewsByFilm",singleMovie.id, "review"), orderBy("date"));
-    // console.log('comentarios :>> ', q);
-    
     onSnapshot(q, (querySnapshot) => {
       const myMsgs = [];
-      
-      querySnapshot.forEach((doc) => {
 
+      querySnapshot.forEach((doc) => {
         myMsgs.push(doc.data());
       });
       setReviewsMsgs(myMsgs);
@@ -74,22 +48,18 @@ function DetailsMovieAuth({singleMovie}) {
     setReview(e.target.value);
   };
 
-  
   const handleSubmit = async () => {
     console.log("review", review);
     try {
-      // await setDoc(doc(db, "Reviews", user.email),  {
-      //   text: review,
-      //   date: new Date(),
-      //   author: user.email,
-      // });//? to create a new document with a custom id (user email)
-      const docRef = await addDoc(collection(db, "ReviewsByFilm", singleMovie.id, "review" ), {
-        text: review,
-        date: new Date(),
-        author: user.email,
-      });
+      const docRef = await addDoc(
+        collection(db, "ReviewsByFilm", singleMovie.id, "review"),
+        {
+          text: review,
+          date: new Date(),
+          author: user.email,
+        }
+      );
       console.log("Document written with ID: ", docRef.id);
-      console.log("suceesssss");
     } catch (e) {
       console.error("Error adding document: ", e);
     }
@@ -103,10 +73,10 @@ function DetailsMovieAuth({singleMovie}) {
     <div>
       <div className="star-rating">
         <p className="p-uppercase">Your rating:</p>
-        {[...Array(5)].map((index, i) => {
+        {[...Array(5)].map((star, index) => {
           index += 1;
           return (
-            <React.Fragment key={i}>
+            <React.Fragment key={star}>
               <button
                 type="button"
                 className={index <= (hover || rating) ? "on" : "off"}
@@ -149,7 +119,7 @@ function DetailsMovieAuth({singleMovie}) {
               </div>
             );
           })}
-          <Reviews/>
+        <Reviews />
       </div>
     </div>
   );

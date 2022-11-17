@@ -18,7 +18,7 @@ function ProfileUser() {
         <FiCheck />
       </button>
       <p><MdAlternateEmail /> Your email: {user.email}</p>
-      <p><RiLockPasswordFill /> Your password: {user.password}</p>
+      <p><RiLockPasswordFill /> Your password: ******{user.password}</p>
       <p>Delete account?</p>
       <button className="button">
         <MdDelete />
