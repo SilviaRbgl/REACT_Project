@@ -163,8 +163,8 @@ p {
   gap: 5px;
 }
 .video {
-  max-width: 320px;
-  max-height: 240px;
+  max-width: 300px;
+  max-height: 220px;
 }
 .card-movie img {
   width: 100%;
@@ -286,8 +286,8 @@ video {
     grid-template-columns: repeat(3, 2fr);
   }
   .video {
-    max-width: 520px;
-    max-height: 440px;
+    max-width: 400px;
+    max-height: 320px;
   }
   .card-movie img {
     max-height: 120px;
@@ -312,6 +312,9 @@ video {
   }
   .container-review p {
     font-size: 1em;
+  }
+  .container-nomatch {
+    margin: 30px 80px;
   }
   .container-login {
     margin: 70px 100px 70px 100px;
@@ -339,6 +342,10 @@ video {
   .grid {
     grid-template-columns: repeat(4, 3fr);
     gap: 10px;
+  }
+  .video {
+    max-width: 520px;
+    max-height: 440px;
   }
   .card-movie img {
     max-height: 190px;
@@ -369,6 +376,9 @@ video {
     padding: 30px;
     border-radius: 40px;
   }
+  .container-nomatch {
+    margin: 70px 130px 70px 130px;
+  }
   .nav {
     padding: 25px;
   }
@@ -395,8 +405,8 @@ video {
     gap: 20px;
   }
   .video {
-    max-width: 720px;
-    max-height: 640px;
+    max-width: 620px;
+    max-height: 540px;
   }
   .card-movie img {
     max-height: 220px;
@@ -420,6 +430,9 @@ video {
   .container-login {
     margin: 70px 200px 70px 200px;
     border-radius: 60px;
+  }
+  .container-nomatch {
+    margin: 70px 200px 70px 200px;
   }
   .dropdown {
     top: 75px;
@@ -459,6 +472,9 @@ video {
     width: 17%;
   }
   .container-profile {
+    margin: 50px 140px;
+  }
+  .container-nomatch {
     margin: 50px 140px;
   }
   .container-review h4 {
