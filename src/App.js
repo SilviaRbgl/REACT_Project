@@ -1,4 +1,4 @@
-import { Routes, Route, Link, NavLink } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Home from "./view/Home";
 import Movies from "./view/Movies";
 import Login from "./view/Login";
@@ -9,7 +9,6 @@ import DetailsMovie from "./view/DetailsMovie";
 import "./index.css";
 import "./App.css"
 import { AuthContextProvider } from "./Context/AuthContext";
-import { app, auth } from "./config";
 import NavBarItem from "./Components/NavBarItem";
 import { GiFilmStrip } from "react-icons/gi";
 import Dropdown from "./Components/Dropdown";
@@ -19,7 +18,7 @@ import ProtectedRoute from "./Components/ProtectedRoute";
 function App() {
   return (
     <div className="App">
-      <AuthContextProvider>
+      <AuthContextProvider> 
         <NavBar>
           <NavBarItem icon={<GiFilmStrip />}>
             <Dropdown></Dropdown>

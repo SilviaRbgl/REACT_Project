@@ -1,4 +1,4 @@
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import React from "react";
 import nomatchvideo from "../images/nomatchvideo.mp4";
 import { FaBackward } from "react-icons/fa";
@@ -14,7 +14,6 @@ function NoMatch() {
     <div className="container-nomatch">
       <h3>Sorry, no results found</h3>
       <video autoPlay="autoPlay" loop="loop" playsInline className="video" src={nomatchvideo} type="video/mp4" />
-      {/* <Icon src= {FaBackward} ></Icon> */}
       <button className="button" onClick={goSearch}>
          BACK TO SEARCH MOVIES 
       </button>

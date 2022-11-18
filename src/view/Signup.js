@@ -1,6 +1,4 @@
-import { updateProfile } from "firebase/auth";
 import React, { useContext, useState } from "react";
-import { auth } from "../config";
 import { AuthContext } from "../Context/AuthContext";
 
 function Signup() {

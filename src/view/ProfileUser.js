@@ -12,17 +12,17 @@ function ProfileUser() {
     <div className="container-profile">
       <h3>Contact information</h3>
       <p ><HiUser /> Your username: {user.displayName}</p>
-      <p><MdEdit /> Change username:</p>
+      {/* <p><MdEdit /> Change username:</p>
       <input type="text" placeholder="write here"></input>
       <button className="button" onClick={updateProfile}>
         <FiCheck />
-      </button>
+      </button> */}
       <p><MdAlternateEmail /> Your email: {user.email}</p>
       <p><RiLockPasswordFill /> Your password: ******{user.password}</p>
-      <p>Delete account?</p>
+      {/* <p>Delete account?</p>
       <button className="button">
         <MdDelete />
-      </button>
+      </button> */}
       
     </div>
   );

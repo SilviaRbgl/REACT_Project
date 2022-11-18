@@ -3,23 +3,21 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../Context/AuthContext";
 
 function Login() {
+
+  const { logIn } = useContext(AuthContext);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   const clickSignup = useNavigate();
   const goSignup = () => {
     clickSignup("/signup");
   };
 
-  const { logIn } = useContext(AuthContext);
-
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
   const handleEmailChange = (e) => {
-    console.log("email>", e.target.value);
     setEmail(e.target.value);
   };
 
   const handlePasswordChange = (e) => {
-    console.log("password>", e.target.value);
     setPassword(e.target.value);
   };
 
@@ -54,8 +52,6 @@ function Login() {
         LOG IN
       </button>
       <br></br>
-      {/* <input type="checkbox" name="remember" />
-      Remeber me<br></br> */}
       <p>Don't have an account?</p>
       <button className="button" onClick={goSignup}>
         SIGN UP HERE

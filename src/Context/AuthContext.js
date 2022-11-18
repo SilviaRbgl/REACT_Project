@@ -9,18 +9,16 @@ import {
   deleteUser,
 } from "firebase/auth";
 import { auth } from "../config";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export const AuthContext = createContext();
 
 export const AuthContextProvider = (props) => {
-  // console.log("props >>>", props);
   const [user, setUser] = useState(null);
   const [open, setOpen] = useState(false);
   const redirectTo = useNavigate();
 
   const signUp = async (displayName, email, password) => {
-    console.log("displayName, email, password", email, password, displayName);
     try {
       const userSignUp = await createUserWithEmailAndPassword(
         auth,
@@ -32,13 +30,10 @@ export const AuthContextProvider = (props) => {
         displayName: displayName,
       })
         .then(() => {
-          console.log("profile updated");
         })
         .catch((error) => {
-          console.log("error :>> ", error);
         });
 
-      console.log("userCredentials>", userSignUp);
       setUser(userSignUp);
       redirectTo("/");
     } catch (error) {
@@ -49,13 +44,10 @@ export const AuthContextProvider = (props) => {
   };
 
   const logIn = async (email, password) => {
-    console.log("email, password", email, password);
     try {
       const userLogIn = await signInWithEmailAndPassword(auth, email, password);
-      console.log("userLogIn", userLogIn);
       setUser(userLogIn);
       redirectTo("/movies");
-      // redirectTo(<Link to="/movies" replace></Link>)
     } catch (error) {
       const errorCode = error.code;
       const errorMessage = error.message;
@@ -90,11 +82,8 @@ export const AuthContextProvider = (props) => {
 
     deleteUser(user)
       .then(() => {
-        // User deleted.
       })
       .catch((error) => {
-        // An error ocurred
-        // ...
       });
   };
 
