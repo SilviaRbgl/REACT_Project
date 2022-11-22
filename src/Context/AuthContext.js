@@ -79,7 +79,7 @@ export const AuthContextProvider = (props) => {
   const deleteUser = () => {
     const auth = getAuth();
     const user = auth.currentUser;
-
+    
     deleteUser(user)
       .then(() => {
       })

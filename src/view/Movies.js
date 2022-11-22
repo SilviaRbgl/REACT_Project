@@ -30,30 +30,19 @@ function Movies() {
   }, []);
 
   const getInput = (input) => {
-    // console.log("get input>>", input);
-
     setSearch(input);
-    // console.log("search >>", search);
   };
 
   const filterMovies = () => {
-    // console.log("movies", movies);
     const filteredMovies = data.items.filter((movie) => {
       return movie.title.toLowerCase().includes(search.toLowerCase());
     });
-    // console.log('filteredMovies :>> ', filteredMovies);
     return filteredMovies;
   };
 
   return (
     <div className="container-main">
       <SearchBar getInput={getInput} />
-      {/* <>
-        {filterMovies().map((movie, index) => {
-          return <Movie key={movie.id} movie={movie} search={search} />;
-        })}
-      </> */}
-
       <>
         {movies ? (
           <>
