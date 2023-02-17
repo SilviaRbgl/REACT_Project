@@ -11,7 +11,7 @@ Most styled elements are pure CSS.
 ## Live preview
 
 The project was deployed on Netlify:
-:palm_tree: [Movies to Review](https://moviestoreview.netlify.app)
+:clapper: [Movies to Review](https://moviestoreview.netlify.app)
 
 ## Technologies used
 
